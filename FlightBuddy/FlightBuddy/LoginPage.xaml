@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FlightBuddy"
+             x:Class="FlightBuddy.MainPage">
+
+    <StackLayout VerticalOptions="Center" Margin="20">
+        <Entry x:Name="loginEmailEntry"
+            Placeholder="Email address" 
+            Keyboard="Email"
+            TextColor="{StaticResource blueColor}"  >
+            
+        </Entry>
+        <Entry Placeholder="Password" 
+               IsPassword="true"
+               x:Name="loginPasswordEntry"
+               TextColor="{StaticResource blueColor}"  >
+        </Entry>
+        <Button x:Name="LoginButton"
+                Text="Log in"
+                Clicked="LoginButton_Clicked"
+                BackgroundColor="{StaticResource blueColor}"
+                TextColor="White"
+                Margin="0, 20, 0, 0"
+                Style="{StaticResource normalButton}"></Button>
+    </StackLayout>
+
+</ContentPage>
