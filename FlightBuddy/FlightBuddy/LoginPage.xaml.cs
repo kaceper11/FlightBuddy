@@ -3,31 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FlightBuddy.Model;
+using FlightBuddy.ToastNotification;
+using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.Forms;
 
 namespace FlightBuddy
 {
-    public partial class MainPage : ContentPage
-    {
-        public MainPage()
+    public partial class LoginPage : ContentPage
+    {      
+        public LoginPage()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            db = new FlightBuddyContext.FlightBuddyContext();
         }
 
-        private void LoginButton_Clicked(object sender, EventArgs e)
-        {
-            bool isEmailEmpty = string.IsNullOrEmpty(loginEmailEntry.Text);
-            bool isPasswordEmpty = string.IsNullOrEmpty(loginPasswordEntry.Text);
+        private FlightBuddyContext.FlightBuddyContext db;
 
-            if (isEmailEmpty || isPasswordEmpty)
+        private async void LoginButton_Clicked(object sender, EventArgs e)
+        {            
+            bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
+            bool isPasswordEmpty = string.IsNullOrEmpty(passwordEntry.Text);
+
+            if (!isEmailEmpty || !isPasswordEmpty)
             {
-                
+                var user = this.db.GetUser(emailEntry.Text);
+
+                if (user != null)
+                {
+                    if (user.Password == passwordEntry.Text)
+                    {
+                        App.User = user;
+                        await Navigation.PushAsync(new HomePage());
+                    }
+                    else
+                    {
+                        DependencyService.Get<IMessage>().LongAlert("Email or password are incorrect");
+                    }
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert("There was an error logging you in");
+                }
             }
             else
             {
-                Navigation.PushAsync(new HomePage());
+                DependencyService.Get<IMessage>().LongAlert("Email and password can't be empty");
             }
             
+        }
+
+        private void RegisterUserButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegisterPage());
         }
     }
 }

@@ -2,9 +2,48 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FlightBuddy.RegisterPage">
-    <StackLayout>
-        <Label Text="Welcome to Xamarin.Forms!"
-            VerticalOptions="CenterAndExpand" 
-            HorizontalOptions="CenterAndExpand" />
+
+    <StackLayout VerticalOptions="Center" Margin="20">
+        <Entry x:Name="emailEntry"
+               Placeholder="Email address" 
+               Keyboard="Email"
+               Text="kfkepinski@gmail.com"
+               TextColor="{StaticResource blueColor}">
+
+        </Entry>
+        <Entry Placeholder="Password" 
+               IsPassword="true"
+               Text="password"
+               x:Name="passwordEntry"
+               TextColor="{StaticResource blueColor}">
+        </Entry>
+        <Entry Placeholder="Confirm password" 
+               IsPassword="true"
+               Text="password"
+               x:Name="confirmPasswordEntry"
+               TextColor="{StaticResource blueColor}">
+        </Entry>
+        <Entry x:Name="nameEntry"
+               Placeholder="Name" 
+               Text="Kacper"
+               TextColor="{StaticResource blueColor}">
+        </Entry>
+        <Entry x:Name="mobileNumberEntry"
+               Placeholder="Mobile number" 
+               Text="506866376"
+               TextColor="{StaticResource blueColor}">
+        </Entry>
+        <Button x:Name="RegiserButton"
+                Text="Register"
+                Clicked="RegisterButton_Clicked"
+                BackgroundColor="{StaticResource blueColor}"
+                TextColor="White"
+                Margin="0, 20, 0, 0"
+                Style="{StaticResource normalButton}"></Button>
+
+        <Button x:Name="loginUserButton"
+                Text="Login"
+                Clicked="LoginUserButton_Clicked"
+                HorizontalOptions="End"></Button>
     </StackLayout>
 </ContentPage>

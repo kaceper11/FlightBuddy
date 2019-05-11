@@ -7,6 +7,8 @@ namespace FlightBuddy.Model
 {
     public class Flight
     {
+        public string Id { get; set; }
+
         [JsonProperty(PropertyName = "flightNumber")]
         public string FlightNumber { get; set; }
 

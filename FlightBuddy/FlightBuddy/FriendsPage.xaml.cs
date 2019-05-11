@@ -15,6 +15,15 @@ namespace FlightBuddy
 		public FriendsPage ()
 		{
 			InitializeComponent ();
+            db = new FlightBuddyContext.FlightBuddyContext();
 		}
-	}
+
+	    private readonly FlightBuddyContext.FlightBuddyContext db;
+
+	    protected override void OnAppearing()
+	    {
+	        base.OnAppearing();
+	        friendsListView.ItemsSource = this.db.GetUserFriends(App.User.Id);
+	    }
+    }
 }

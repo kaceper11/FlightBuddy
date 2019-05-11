@@ -4,7 +4,7 @@
             xmlns:local="clr-namespace:FlightBuddy"
              x:Class="FlightBuddy.HomePage">
 
-    <local:FlightSearchPage Title="Friends"/>
+    <local:FlightSearchPage Title="Search flights"/>
     <local:FriendsPage Title="Friends"/>
     <local:FlightsPage Title="Flights"/>
 </TabbedPage>
