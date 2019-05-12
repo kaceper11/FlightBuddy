@@ -26,8 +26,6 @@ namespace FlightBuddy.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            ServicePointManager.ServerCertificateValidationCallback += (o, cert, chain, errors) => true;
-
             string dbName = "FlightBuddy_DB.sqlite";
             string folderPath = Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fullPath = Path.Combine(folderPath, dbName);

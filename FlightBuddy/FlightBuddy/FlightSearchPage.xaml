@@ -13,7 +13,7 @@
         <Entry Placeholder="Destination airport"                
                x:Name="destinationEntry"
                TextColor="{StaticResource blueColor}"
-               IsEnabled="True"
+               IsEnabled="True" Focused="OpenDestinationAiportSearch"
                >
         </Entry>
 

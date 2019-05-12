@@ -13,11 +13,11 @@ namespace FlightBuddy.FlightSearchApi
         public async Task<IEnumerable<Airport>> GetAirports()
         {
             const string url = "https://iatacodes.org/api/v6/airports?api_key=38d77104-d093-4840-b2e6-5cbf7d66cfc7";
-            var list = new List<Airport>();
 
             using (var client = new HttpClient())
             {
                 string json = string.Empty;
+                
                 var response = await client.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {

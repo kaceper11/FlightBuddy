@@ -34,6 +34,11 @@ namespace FlightBuddy
 	    {
 	        await Navigation.PushAsync(new SearchOriginAirportPage());
 	    }
-        
+
+	    private async void OpenDestinationAiportSearch(object sender, EventArgs e)
+	    {
+	        await Navigation.PushAsync(new SearchDestinationAirportPage());
+	    }
+
     }
 }
