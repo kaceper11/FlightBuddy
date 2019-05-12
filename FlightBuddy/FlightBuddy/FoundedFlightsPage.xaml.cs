@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlightBuddy.FlightSearchApi;
+using FlightBuddy.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -32,6 +33,12 @@ namespace FlightBuddy
 	    protected override async void OnAppearing()
 	    {
 	        foundedFlightsListView.ItemsSource = await flightsApi.GetFlights(this.OriginCode, this.DestinationCode, this.Date);	       
+	    }
+
+	    private async void FoundedFlight_Clicked(object sender, ItemTappedEventArgs e)
+	    {
+	        var itemTapped = e.Item as FlightViewModel;
+	        await Navigation.PushAsync(new FlightsPage());
 	    }
     }
 }

@@ -2380,13 +2380,13 @@ namespace FlightBuddy.Droid
 			public const int design_snackbar_background = 2131296347;
 			
 			// aapt resource value: 0x7F010002
-			public const int icons8-customer-filled-50 = 2130771970;
+			public const int icon_flights = 2130771970;
 			
 			// aapt resource value: 0x7F010003
-			public const int icon_flights = 2130771971;
+			public const int icon_friends = 2130771971;
 			
 			// aapt resource value: 0x7F010004
-			public const int icon_friends = 2130771972;
+			public const int icon_profile = 2130771972;
 			
 			// aapt resource value: 0x7F010005
 			public const int icon_search = 2130771973;

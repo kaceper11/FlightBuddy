@@ -4,7 +4,8 @@
              x:Class="FlightBuddy.FoundedFlightsPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="foundedFlightsListView">
+            <ListView x:Name="foundedFlightsListView"
+                      ItemTapped="FoundedFlight_Clicked">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding AirlineCode}"/>

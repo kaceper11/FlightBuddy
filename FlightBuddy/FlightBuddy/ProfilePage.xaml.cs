@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Akavache;
 using FlightBuddy.ToastNotification;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -31,7 +33,8 @@ namespace FlightBuddy
 	    private async void LogoutButton_Clicked(object sender, EventArgs e)
 	    {
 	        App.User = null;
-	        await Navigation.PushAsync(new LoginPage());
+	        await BlobCache.UserAccount.Invalidate("User");
+            await Navigation.PushAsync(new LoginPage());
 	        DependencyService.Get<IMessage>().LongAlert("You've been successfully logged out");
         }
     }

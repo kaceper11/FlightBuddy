@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Akavache;
 using FlightBuddy.Model;
 using FlightBuddy.ToastNotification;
 using Xamarin.Forms;
@@ -51,7 +53,9 @@ namespace FlightBuddy
 	                {
 	                    this.db.AddUser(user);
                         App.User = user;
-	                    await Navigation.PushAsync(new HomePage());
+	                    await BlobCache.UserAccount.Invalidate("User");
+                        await BlobCache.UserAccount.InsertObject("User", user, DateTimeOffset.Now.AddDays(7));
+                        await Navigation.PushAsync(new HomePage());
 	                }
 
                 }
