@@ -7,8 +7,6 @@ using FlightBuddy.Model;
 using FlightBuddy.ToastNotification;
 using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.Forms;
-using System.Reactive.Linq;
-using Akavache;
 
 namespace FlightBuddy
 {
@@ -18,17 +16,12 @@ namespace FlightBuddy
         {
             InitializeComponent(); 
             db = new FlightBuddyContext.FlightBuddyContext();
-
-            //BlobCache.UserAccount.GetObject<User>("User")
-            //    .Subscribe(x => User = x);
-            //if (this.User != null)
-            //{
-            //    App.User = this.User;
-            //    Navigation.PushAsync(new HomePage());
-            //}
+            localDb = new LocalDb.LocalDb();
         }
 
-        private FlightBuddyContext.FlightBuddyContext db;
+        private readonly FlightBuddyContext.FlightBuddyContext db;
+
+        private readonly LocalDb.LocalDb localDb;
 
         private User User { get; set; }
 
@@ -46,10 +39,6 @@ namespace FlightBuddy
                     if (user.Password == passwordEntry.Text)
                     {
                         App.User = user;
-                        //await BlobCache.UserAccount.Invalidate("User");
-                        await BlobCache.UserAccount.InsertObject("User", user, DateTimeOffset.Now.AddDays(7));
-                        BlobCache.UserAccount.GetObject<User>("User")
-                            .Subscribe(x => this.User = x, ex => Console.WriteLine("No Key!"));
                         await Navigation.PushAsync(new HomePage());
                     }
                     else

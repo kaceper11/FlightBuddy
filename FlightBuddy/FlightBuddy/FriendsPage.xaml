@@ -3,14 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FlightBuddy.FriendsPage"
              NavigationPage.HasNavigationBar="false">
-    
-    <ListView x:Name="friendsListView"
-              IsPlatformEnabled="True"
-              ItemTapped="UserFriend_Clicked">
+
+    <ListView x:Name="friendsListView" ItemTapped="UserFriend_Clicked" RowHeight="80">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Email}" />
-
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout>
+                            <Label Text="{Binding Id}" TextColor="{StaticResource blueColor}" IsVisible="false"/>
+                            <Label Text="{Binding Name}" TextColor="{StaticResource blueColor}" />
+                            <Label Text="{Binding Email}" TextColor="{StaticResource blueColor}" />
+                            <Label Text="{Binding MobileNumber}" TextColor="{StaticResource blueColor}" />
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

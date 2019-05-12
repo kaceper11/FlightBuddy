@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Akavache;
 using FlightBuddy.Model;
 using FlightBuddy.ToastNotification;
 using Xamarin.Forms;
@@ -19,11 +17,14 @@ namespace FlightBuddy
 		{
 			InitializeComponent ();
             db = new FlightBuddyContext.FlightBuddyContext();
-		}
+		    localDb = new LocalDb.LocalDb();
+        }
 
-	    private FlightBuddyContext.FlightBuddyContext db;
+	    private readonly FlightBuddyContext.FlightBuddyContext db;
 
-	    private async void RegisterButton_Clicked(object sender, EventArgs e)
+	    private readonly LocalDb.LocalDb localDb;
+
+        private async void RegisterButton_Clicked(object sender, EventArgs e)
 	    {
 	        bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
 	        bool isPasswordEmpty = string.IsNullOrEmpty(passwordEntry.Text);
@@ -43,7 +44,7 @@ namespace FlightBuddy
 	                    MobileNumber = mobileNumberEntry.Text,
 	                };
 
-	                var userDb = this.db.GetUserByEmail(emailEntry.Text);
+	                var userDb = await this.db.GetUserByEmail(emailEntry.Text);
 
 	                if (userDb != null)
 	                {
@@ -53,11 +54,8 @@ namespace FlightBuddy
 	                {
 	                    this.db.AddUser(user);
                         App.User = user;
-	                    await BlobCache.UserAccount.Invalidate("User");
-                        await BlobCache.UserAccount.InsertObject("User", user, DateTimeOffset.Now.AddDays(7));
                         await Navigation.PushAsync(new HomePage());
 	                }
-
                 }
 	            else
 	            {
@@ -75,5 +73,7 @@ namespace FlightBuddy
 	    {
 	        Navigation.PushAsync(new LoginPage());
 	    }
+
+
     }
 }

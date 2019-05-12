@@ -21,6 +21,10 @@ namespace FlightBuddy.Model
         [JsonProperty(PropertyName = "destinationCode")]
         public string DestinationCode { get; set; }
 
+        public string Origin { get; set; }
+
+        public string Destination { get; set; }
+
         [JsonProperty(PropertyName = "leaveTimeAirport")]
         public DateTime LeaveTimeAirport { get; set; }
 

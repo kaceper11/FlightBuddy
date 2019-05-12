@@ -8,9 +8,11 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netsta
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightSearchPage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightsPage.xaml.g.cs
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FoundedFlightsPage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FriendsPage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\HomePage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\LoginPage.xaml.g.cs
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\ProfilePage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\RegisterPage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\UserFriendProfilePage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.csproj.CoreCompileInputs.cache
@@ -19,6 +21,6 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netsta
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.csproj.CopyComplete
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.pdb
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FoundedFlightsPage.xaml.g.cs
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\ProfilePage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\SearchDestinationAirport.xaml.g.cs
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\SearchOriginAirportPage.xaml.g.cs

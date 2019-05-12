@@ -58,6 +58,7 @@ namespace FlightBuddy.FlightBuddyContext
                    where user.Id == userId
                    select new FlightViewModel()
                    {
+                       Id = flight.Id,
                        AirlineCode = flight.AirlineCode,
                        ArrivalTimeAirport = flight.ArrivalTimeAirport,
                        DestinationCode = flight.DestinationCode,
@@ -79,6 +80,7 @@ namespace FlightBuddy.FlightBuddyContext
                    where userFriends.Contains(user.Id)
                    select new UserFriendViewModel()
                     {
+                        Id = user.Id,
                        Email = user.Email,
                         MobileNumber = user.MobileNumber,
                         Name = user.Name

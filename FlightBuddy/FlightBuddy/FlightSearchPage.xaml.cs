@@ -16,18 +16,24 @@ namespace FlightBuddy
 		{
 			InitializeComponent ();
             this.flightsApi = new FlightsApi();
+            this.localDb = new LocalDb.LocalDb();
 		}
 
 	    private readonly IFlightsApi flightsApi;
 
-	    private async void SearchButton_Clicked(object sender, EventArgs e)
-	    {
+	    private readonly LocalDb.LocalDb localDb;
 
-	        //searchFlightsListView.ItemsSource = await flightsApi.GetFlights(originCodeEntry.Text, destinationCodeEntry.Text,
-	        //    datePicker.Date.ToString("yyyy-MM-dd"));
-	        await Navigation.PushAsync(new FoundedFlightsPage(originCodeEntry.Text, destinationCodeEntry.Text,
+        private async void SearchButton_Clicked(object sender, EventArgs e)
+        {
+            var flight = localDb.GetFlight();
+	        await Navigation.PushAsync(new FoundedFlightsPage(flight.OriginCode, flight.DestinationCode,
 	            datePicker.Date.ToString("yyyy-MM-dd")));
-
 	    }
+
+	    private async void OpenOriginAiportSearch(object sender, EventArgs e)
+	    {
+	        await Navigation.PushAsync(new SearchOriginAirportPage());
+	    }
+        
     }
 }

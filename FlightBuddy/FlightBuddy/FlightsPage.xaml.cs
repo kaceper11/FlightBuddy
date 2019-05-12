@@ -26,11 +26,17 @@ namespace FlightBuddy
 	        flightsListView.ItemsSource = await this.db.GetUserFlights(App.User.Id);
 	    }
 
-	    //private void flightsListView_Refreshing(object sender, EventArgs e)
-	    //{
-	    //    flightsListView.ItemsSource = this.db.GetUserFlights(App.User.Id);
-	    //    flightsListView.IsRefreshing = false;
+        //private void flightsListView_Refreshing(object sender, EventArgs e)
+        //{
+        //    flightsListView.ItemsSource = this.db.GetUserFlights(App.User.Id);
+        //    flightsListView.IsRefreshing = false;
 	    //}
+
+	    private async void UserFlight_Clicked(object sender, ItemTappedEventArgs e)
+	    {
+	        //var itemTapped = e.Item as UserFriendViewModel;
+	        //await Navigation.PushAsync(new UserFriendProfilePage(itemTapped.Email));
+	    }
 
     }
 }

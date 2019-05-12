@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Akavache;
 using FlightBuddy.Model;
 using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.Forms;
@@ -9,12 +8,6 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace FlightBuddy
 {
-    public interface IAuthenticate
-    {
-        Task<bool> Authenticate();
-    }
-
-
     public partial class App : Application
     {
         public static MobileServiceClient MobileService =
@@ -24,33 +17,49 @@ namespace FlightBuddy
 
         public static User User = new User();
 
-        public static IAuthenticate Authenticator { get; private set; }
+        public static LocalDb.LocalDb LocalDb; 
 
-        
-
-        public static void Init(IAuthenticate authenticator)
-        {
-            Authenticator = authenticator;
-        }
+        public static string DatabaseLocation = string.Empty;
 
         public App()
         {
             InitializeComponent();
-            Registrations.Start("FlightBuddy");
-            //LoginIfPossible();
             MainPage = new NavigationPage(new LoginPage());
         }
 
-        private static void LoginIfPossible()
+        public App(string databaseLocation)
         {
-            Registrations.Start("FlightBuddy");
-            BlobCache.UserAccount.GetObject<User>("User")
-                .Subscribe(x => App.User = x);
-
-            if (User != null)
+            InitializeComponent();
+            DatabaseLocation = databaseLocation;
+            LocalDb = new LocalDb.LocalDb();
+            if (LoginIfPossible())
             {
-                App.Current.MainPage = new NavigationPage(new HomePage());
+                MainPage = new NavigationPage(new LoginPage());
             }
+   
+        }
+
+        private static bool LoginIfPossible()
+        {
+            
+            if (LocalDb.CheckIfUserEmpty())
+            {
+                var localUser = LocalDb.GetUser();
+
+                var user = new User()
+                {
+                    Id = localUser.UserId,
+                    Email = localUser.Email,
+                    MobileNumber = localUser.MobileNumber,
+                    Name = localUser.Name,
+                    Password = localUser.Password
+                };
+                App.User = user;
+                App.Current.MainPage = new NavigationPage(new HomePage());
+                return false;
+            }
+
+            return true;
         }
 
         protected  override void OnStart()

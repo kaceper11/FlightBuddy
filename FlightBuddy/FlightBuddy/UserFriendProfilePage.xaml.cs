@@ -12,19 +12,12 @@ namespace FlightBuddy
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class UserFriendProfilePage : ContentPage
 	{
-		//public UserFriendProfilePage ()
-		//{
-		//	InitializeComponent ();
-  //          db = new FlightBuddyContext.FlightBuddyContext();
-		//}
-
         public UserFriendProfilePage(string email)
         {
             InitializeComponent();
             db = new FlightBuddyContext.FlightBuddyContext();
             this.UserEmail = email;
         }
-
 
         private readonly FlightBuddyContext.FlightBuddyContext db;
 
@@ -34,8 +27,10 @@ namespace FlightBuddy
         {
             base.OnAppearing();
 
-           var user = await db.GetUserByEmail(this.UserEmail);
-            userFriendEmail.Text = user.Email;//"kacper gg";
+           var user = await db.GetUserById(this.UserEmail);
+            userFriendName.Text = user.Name;
+            userFriendEmail.Text = user.Email;
+            userFriendMobileNumber.Text = user.MobileNumber;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace FlightBuddy
         private async void UserFriend_Clicked(object sender, ItemTappedEventArgs e)
         {
             var itemTapped = e.Item as UserFriendViewModel;
-            await Navigation.PushAsync(new UserFriendProfilePage(itemTapped.Email));
+            await Navigation.PushAsync(new UserFriendProfilePage(itemTapped.Id));
         }
 
 

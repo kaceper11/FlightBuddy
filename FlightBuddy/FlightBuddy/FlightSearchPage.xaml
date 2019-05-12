@@ -6,19 +6,19 @@
     <StackLayout VerticalOptions="Center" Margin="20">
         <Entry x:Name="originEntry"               
                Placeholder="Origin airport" 
-               TextColor="{StaticResource blueColor}">
+               TextColor="{StaticResource blueColor}"
+               IsEnabled="True"
+               Focused="OpenOriginAiportSearch">
         </Entry>
         <Entry Placeholder="Destination airport"                
                x:Name="destinationEntry"
-               TextColor="{StaticResource blueColor}">
+               TextColor="{StaticResource blueColor}"
+               IsEnabled="True"
+               >
         </Entry>
-        <DatePicker  x:Name="datePicker" Format="dd/MM/yyyy"/>
-        <Entry x:Name="originCodeEntry"
-               IsVisible="true">
-        </Entry>
-        <Entry x:Name="destinationCodeEntry"
-               IsVisible="true">
-        </Entry>
+
+        <DatePicker  x:Name="datePicker" 
+                     Format="dd/MM/yyyy"/>
         <Button x:Name="SearchButton"
                 Text="Search"
                 Clicked="SearchButton_Clicked"

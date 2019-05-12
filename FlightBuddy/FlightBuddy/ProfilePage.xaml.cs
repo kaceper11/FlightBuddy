@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Akavache;
 using FlightBuddy.ToastNotification;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -18,9 +15,12 @@ namespace FlightBuddy
 	    {
 	        InitializeComponent();
             db = new FlightBuddyContext.FlightBuddyContext();
+            localDb = new LocalDb.LocalDb();
 	    }
 
-	    private FlightBuddyContext.FlightBuddyContext db;
+	    private readonly FlightBuddyContext.FlightBuddyContext db;
+
+	    private readonly LocalDb.LocalDb localDb;
 
         protected override async void OnAppearing()
 	    {
@@ -33,9 +33,14 @@ namespace FlightBuddy
 	    private async void LogoutButton_Clicked(object sender, EventArgs e)
 	    {
 	        App.User = null;
-	        await BlobCache.UserAccount.Invalidate("User");
+            this.DeleteFromLocalDb();
             await Navigation.PushAsync(new LoginPage());
 	        DependencyService.Get<IMessage>().LongAlert("You've been successfully logged out");
         }
+
+	    private void DeleteFromLocalDb()
+	    {
+	        localDb.DeleteUsers();	        
+	    }
     }
 }
