@@ -4,8 +4,10 @@ using System.Text;
 
 namespace FlightBuddy.ViewModel
 {
-    public class UserFriendVIewModel
+    public class UserFriendViewModel
     {
+        public string Id { get; set; }
+
         public string Email { get; set; }
 
         public string Name { get; set; }

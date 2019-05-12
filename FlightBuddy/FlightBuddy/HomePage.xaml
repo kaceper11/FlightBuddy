@@ -2,9 +2,12 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:FlightBuddy"
-             x:Class="FlightBuddy.HomePage">
+             x:Class="FlightBuddy.HomePage"
+            NavigationPage.HasNavigationBar="false">
 
-    <local:FlightSearchPage Title="Search flights"/>
-    <local:FriendsPage Title="Friends"/>
-    <local:FlightsPage Title="Flights"/>
+
+    <local:FlightSearchPage Title="Search flights" Icon="icon_search.png"/>
+    <local:FlightsPage Title="Flights" Icon="icon_flights.png"/>
+    <local:FriendsPage Title="Friends" Icon="icon_friends.png"/>
+    <local:ProfilePage Title="Profile" Icon="icon_profile.png"/>
 </TabbedPage>

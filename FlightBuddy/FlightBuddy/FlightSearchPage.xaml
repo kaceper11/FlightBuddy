@@ -1,10 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FlightBuddy.FlightSearchPage">
-    <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+             x:Class="FlightBuddy.FlightSearchPage"
+             NavigationPage.HasNavigationBar="false">
+    <StackLayout VerticalOptions="Center" Margin="20">
+        <Entry x:Name="originEntry"               
+               Placeholder="Origin airport" 
+               TextColor="{StaticResource blueColor}">
+        </Entry>
+        <Entry Placeholder="Destination airport"                
+               x:Name="destinationEntry"
+               TextColor="{StaticResource blueColor}">
+        </Entry>
+        <DatePicker  x:Name="datePicker" Format="dd/MM/yyyy"/>
+        <Entry x:Name="originCodeEntry"
+               IsVisible="true">
+        </Entry>
+        <Entry x:Name="destinationCodeEntry"
+               IsVisible="true">
+        </Entry>
+        <Button x:Name="SearchButton"
+                Text="Search"
+                Clicked="SearchButton_Clicked"
+                BackgroundColor="{StaticResource blueColor}"
+                TextColor="White"
+                Margin="0, 20, 0, 0"
+                Style="{StaticResource normalButton}"></Button>
+
+    </StackLayout>
 </ContentPage>

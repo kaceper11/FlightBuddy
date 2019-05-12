@@ -12,7 +12,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FlightBuddy.TestUnit
 {
-    [TestClass]
+    [TestClass, Ignore]
     public class ApiResponseTest
     {
         private readonly string airportCodeFrom = "SGN";

@@ -11,10 +11,10 @@ namespace FlightBuddy.FlightSearchApi
 {
     public class FlightsApi : IFlightsApi
     {
-        public async Task<IEnumerable<Flight>> GetFlights(string airportCodeFrom, string airportCodeTo, DateTime date)
+        public async Task<IEnumerable<Flight>> GetFlights(string airportCodeFrom, string airportCodeTo, string date)
         {
             string url = string.Concat("https://apidojo-kayak-v1.p.rapidapi.com/flights/create-session?origin1=", airportCodeFrom, "&destination1=", 
-                airportCodeTo,"&departdate1=", date.ToString("yyyy-MM-dd"),"&cabin=e&currency=USD&adults=1&bags=0");
+                airportCodeTo,"&departdate1=", date,"&cabin=e&currency=USD&adults=1&bags=0");
             var list = new List<Flight>();
 
             using (var client = new HttpClient())

@@ -1,25 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FlightBuddy.RegisterPage">
+             x:Class="FlightBuddy.RegisterPage"
+             NavigationPage.HasNavigationBar="false">
 
     <StackLayout VerticalOptions="Center" Margin="20">
         <Entry x:Name="emailEntry"
                Placeholder="Email address" 
                Keyboard="Email"
-               Text="kfkepinski@gmail.com"
                TextColor="{StaticResource blueColor}">
 
         </Entry>
         <Entry Placeholder="Password" 
                IsPassword="true"
-               Text="password"
                x:Name="passwordEntry"
                TextColor="{StaticResource blueColor}">
         </Entry>
         <Entry Placeholder="Confirm password" 
                IsPassword="true"
-               Text="password"
                x:Name="confirmPasswordEntry"
                TextColor="{StaticResource blueColor}">
         </Entry>
@@ -30,7 +28,6 @@
         </Entry>
         <Entry x:Name="mobileNumberEntry"
                Placeholder="Mobile number" 
-               Text="506866376"
                TextColor="{StaticResource blueColor}">
         </Entry>
         <Button x:Name="RegiserButton"

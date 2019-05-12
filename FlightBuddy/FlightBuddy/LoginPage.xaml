@@ -2,17 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FlightBuddy"
-             x:Class="FlightBuddy.LoginPage">
+             x:Class="FlightBuddy.LoginPage"
+             NavigationPage.HasNavigationBar="false">
 
     <StackLayout VerticalOptions="Center" Margin="20">
         <Entry x:Name="emailEntry"
             Placeholder="Email address" 
             Keyboard="Email"
+            Text="kfkepinski@gmail.com"
             TextColor="{StaticResource blueColor}"  >
             
         </Entry>
         <Entry Placeholder="Password" 
                IsPassword="true"
+               Text="password"
                x:Name="passwordEntry"
                TextColor="{StaticResource blueColor}"  >
         </Entry>

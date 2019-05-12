@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FlightBuddy.FriendsPage">
+             x:Class="FlightBuddy.FriendsPage"
+             NavigationPage.HasNavigationBar="false">
     
-    <ListView x:Name="friendsListView">
+    <ListView x:Name="friendsListView"
+              IsPlatformEnabled="True"
+              ItemTapped="UserFriend_Clicked">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Name}"/>
+                <TextCell Text="{Binding Email}" />
+
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

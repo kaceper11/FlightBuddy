@@ -20,10 +20,17 @@ namespace FlightBuddy
 
 	    private readonly FlightBuddyContext.FlightBuddyContext db;
 
-	    protected override void OnAppearing()
+	    protected override async void OnAppearing()
 	    {
             base.OnAppearing();
-	        flightsListView.ItemsSource = this.db.GetUserFlights(App.User.Id);
+	        flightsListView.ItemsSource = await this.db.GetUserFlights(App.User.Id);
 	    }
-	}
+
+	    //private void flightsListView_Refreshing(object sender, EventArgs e)
+	    //{
+	    //    flightsListView.ItemsSource = this.db.GetUserFlights(App.User.Id);
+	    //    flightsListView.IsRefreshing = false;
+	    //}
+
+    }
 }

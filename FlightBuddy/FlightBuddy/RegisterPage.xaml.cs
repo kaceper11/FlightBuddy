@@ -41,7 +41,7 @@ namespace FlightBuddy
 	                    MobileNumber = mobileNumberEntry.Text,
 	                };
 
-	                var userDb = this.db.GetUser(emailEntry.Text);
+	                var userDb = this.db.GetUserByEmail(emailEntry.Text);
 
 	                if (userDb != null)
 	                {

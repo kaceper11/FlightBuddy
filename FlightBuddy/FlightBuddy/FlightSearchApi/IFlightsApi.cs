@@ -7,6 +7,6 @@ namespace FlightBuddy.FlightSearchApi
 {
     public interface IFlightsApi
     {
-        Task<IEnumerable<Flight>> GetFlights(string airportCodeFrom, string airportCodeTo, DateTime date);
+        Task<IEnumerable<Flight>> GetFlights(string airportCodeFrom, string airportCodeTo, string date);
     }
 }

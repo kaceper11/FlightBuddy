@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using FlightBuddy.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,10 +20,18 @@ namespace FlightBuddy
 
 	    private readonly FlightBuddyContext.FlightBuddyContext db;
 
-	    protected override void OnAppearing()
-	    {
-	        base.OnAppearing();
-	        friendsListView.ItemsSource = this.db.GetUserFriends(App.User.Id);
-	    }
+        protected  override async void OnAppearing()
+        {
+            base.OnAppearing();
+            friendsListView.ItemsSource = await this.db.GetUserFriends(App.User.Id);
+        }
+
+        private async void UserFriend_Clicked(object sender, ItemTappedEventArgs e)
+        {
+            var itemTapped = e.Item as UserFriendViewModel;
+            await Navigation.PushAsync(new UserFriendProfilePage(itemTapped.Email));
+        }
+
+
     }
 }

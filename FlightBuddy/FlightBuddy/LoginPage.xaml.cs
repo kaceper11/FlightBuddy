@@ -27,7 +27,7 @@ namespace FlightBuddy
 
             if (!isEmailEmpty || !isPasswordEmpty)
             {
-                var user = this.db.GetUser(emailEntry.Text);
+                var user = await this.db.GetUserByEmail(emailEntry.Text);
 
                 if (user != null)
                 {
