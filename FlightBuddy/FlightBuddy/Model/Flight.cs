@@ -15,6 +15,8 @@ namespace FlightBuddy.Model
         [JsonProperty(PropertyName = "airlineCode")]
         public string AirlineCode { get; set; }
 
+        public string Airline { get; set; }
+
         [JsonProperty(PropertyName = "originCode")]
         public string OriginCode { get; set; }
 
@@ -59,7 +61,7 @@ namespace FlightBuddy.Model
         public Dictionary<string, string> AirlineLogos { get; set; }
 
         [JsonProperty(PropertyName = "airportDetails")]
-        public Dictionary<string, AirportDetail> airportDetails { get; set; }
+        public Dictionary<string, AirportDetail> AirportDetails { get; set; }
 
         [JsonProperty(PropertyName = "layoverAirports")]
         public Dictionary<string, string> LayoverAirports { get; set; }
@@ -73,11 +75,6 @@ namespace FlightBuddy.Model
         [JsonProperty(PropertyName = "segset")]
         public Dictionary<string, Flight> Flights { get; set; }
 
-    }
-
-    public class AirportDetails
-    {
-        public Dictionary<string, AirportDetail> airportDetails { get; set; }
     }
 
     public class AirportDetail

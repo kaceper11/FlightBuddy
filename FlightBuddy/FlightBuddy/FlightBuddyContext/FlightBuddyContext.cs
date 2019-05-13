@@ -108,6 +108,16 @@ namespace FlightBuddy.FlightBuddyContext
             return (await this.Flights.ToListAsync()).FirstOrDefault(flight => flight.Id == flightId);
         }
 
+        public async Task<string> GetFlightIdByDetails(Flight flight)
+        {
+            return  (await this.Flights.ToListAsync()).Where(f => f.AirlineCode == flight.AirlineCode
+                                                               && f.ArrivalTimeAirport == flight.ArrivalTimeAirport
+                                                               && f.DestinationCode == flight.DestinationCode
+                                                               && f.OriginCode == flight.OriginCode
+                                                               && f.LeaveTimeAirport == flight.LeaveTimeAirport
+                                                               && f.FlightNumber == flight.FlightNumber).SingleOrDefault().Id;
+        }
+
         public async Task<bool> CheckIfFlightExists(Flight flight)
         {
             return (await this.Flights.ToListAsync()).Any(f => f.AirlineCode == flight.AirlineCode 

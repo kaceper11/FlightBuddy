@@ -15,7 +15,6 @@ namespace FlightBuddy.FlightSearchApi
         {
             string url = string.Concat("https://apidojo-kayak-v1.p.rapidapi.com/flights/create-session?origin1=", airportCodeFrom, "&destination1=", 
                 airportCodeTo,"&departdate1=", date,"&cabin=e&currency=USD&adults=1&bags=0");
-            var list = new List<Flight>();
 
             using (var client = new HttpClient())
             {
@@ -30,8 +29,39 @@ namespace FlightBuddy.FlightSearchApi
                 }
 
                 var flightRoot = JsonConvert.DeserializeObject<FlightResponse>(json);
-                return flightRoot.Flights.Select(d => d.Value).ToList();
-                
+
+                if (flightRoot != null)
+                {
+                    var listOfFlights = flightRoot.Flights.Select(d => d.Value).ToList();
+
+                    foreach (var flight in listOfFlights)
+                    {
+                        string airLine = string.Empty;
+                        AirportDetail origin = new AirportDetail();
+                        AirportDetail destination = new AirportDetail();
+
+
+                        if (flightRoot.AirLines.TryGetValue(flight.AirlineCode, out airLine))
+                        {
+                            flight.Airline = airLine;
+                        }
+
+                        if (flightRoot.AirportDetails.TryGetValue(flight.OriginCode, out origin))
+                        {
+                            flight.Origin = origin.Name;
+                        }
+
+                        if (flightRoot.AirportDetails.TryGetValue(flight.DestinationCode, out destination))
+                        {
+                            flight.Destination = destination.Name;
+                        }
+
+                    }
+
+                    return listOfFlights;
+                }
+
+               return new List<Flight>();
             }
         }
     }
