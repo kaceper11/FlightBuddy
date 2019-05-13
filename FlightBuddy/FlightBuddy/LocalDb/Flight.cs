@@ -11,12 +11,6 @@ namespace FlightBuddy.LocalDb
         public int Id { get; set; }
 
         [MaxLength(50)]
-        public string FlightNumber { get; set; }
-
-        [MaxLength(50)]
-        public string AirlineCode { get; set; }
-
-        [MaxLength(50)]
         public string OriginCode { get; set; }
 
         [MaxLength(50)]
@@ -27,9 +21,6 @@ namespace FlightBuddy.LocalDb
 
         [MaxLength(50)]
         public string Destination { get; set; }
-        
-        public DateTime LeaveTimeAirport { get; set; }
-
-        public DateTime ArrivalTimeAirport { get; set; }
+       
     }
 }

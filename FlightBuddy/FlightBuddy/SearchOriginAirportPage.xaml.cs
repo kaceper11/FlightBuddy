@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlightBuddy.FlightSearchApi;
+using FlightBuddy.Model;
+using FlightBuddy.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Flight = FlightBuddy.LocalDb.Flight;
 
 namespace FlightBuddy
 {
@@ -15,11 +18,15 @@ namespace FlightBuddy
 		public SearchOriginAirportPage ()
 		{
 			InitializeComponent ();
-		    airportsApi = new AirportsApi();
+		    localDb = new LocalDb.LocalDb();
+            airportsApi = new AirportsApi();
             this.GetListOfAirports();
+		    originAirportSearch.Focus();
         }
 
 	    private readonly IAirportsApi airportsApi;
+
+	    private readonly LocalDb.LocalDb localDb;
 
         private IEnumerable<Model.Airport> Airports { get; set; }
 
@@ -28,14 +35,37 @@ namespace FlightBuddy
 	        this.Airports = await this.airportsApi.GetAirports();
 	    }
 
-	    private async void SearchAirports_Clicked(object sender, EventArgs e)
+	    private void SearchAirports_TextChanged(object sender, EventArgs e)
 	    {
 	        var keyword = originAirportSearch.Text;
-            //var listOfAirports = await this.airportsApi.GetAirports();
-            //var suggestions = listOfAirports.Where(a => a.Name.ToLower().Contains(keyword.ToLower()));
 	        var suggestions = this.Airports.Where(a => a.Name.ToLower().Contains(keyword.ToLower()));
             airportSuggestions.ItemsSource = suggestions;
-
 	    }
+
+	    private async void SetOriginAirport(object sender, ItemTappedEventArgs e)
+	    {
+	        var itemTapped = e.Item as Airport;
+	        var flight = this.localDb.GetFlight();
+	        if (flight != null)
+	        {
+	            flight.OriginCode = itemTapped.Code;
+	            flight.Origin = itemTapped.Name;
+                this.localDb.UpdateFlight(flight);
+	            await Navigation.PushAsync(new FlightSearchPage());
+	        }
+	        else
+	        {
+                var localFlight = new LocalDb.Flight
+                {
+                    OriginCode = itemTapped.Code,
+                    Origin = itemTapped.Name
+                };
+                this.localDb.AddFlight(localFlight);
+	            await Navigation.PushAsync(new FlightSearchPage());
+            }
+
+        }
+
+
     }
 }

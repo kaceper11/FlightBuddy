@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlightBuddy.FlightSearchApi;
+using FlightBuddy.LocalDb;
+using FlightBuddy.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,6 +21,7 @@ namespace FlightBuddy
 	        airportsApi = new AirportsApi();
             localDb = new LocalDb.LocalDb();
 	        this.GetListOfAirports();
+	        destinationAirportSearch.Focus();
 	    }
 
 	    private readonly IAirportsApi airportsApi;
@@ -32,24 +35,35 @@ namespace FlightBuddy
 	        this.Airports = await this.airportsApi.GetAirports();
 	    }
 
-	    private async void SearchAirports_Clicked(object sender, EventArgs e)
+	    private  void SearchAirports_TextChanged(object sender, EventArgs e)
 	    {
 	        var keyword = destinationAirportSearch.Text;
-	        //var listOfAirports = await this.airportsApi.GetAirports();
-	        //var suggestions = listOfAirports.Where(a => a.Name.ToLower().Contains(keyword.ToLower()));
 	        var suggestions = this.Airports.Where(a => a.Name.ToLower().Contains(keyword.ToLower()));
 	        airportSuggestions.ItemsSource = suggestions;
-
 	    }
 
-	    private void SetOriginAirport(object sender, EventArgs e)
+	    private async void SetDestinationAirport(object sender, ItemTappedEventArgs e)
 	    {
-	        if (this.localDb.CheckIfFlightEmpty())
+	        var itemTapped = e.Item as Airport;
+	        var flight = this.localDb.GetFlight();
+	        if (flight != null)
 	        {
-
-	        }
-
-	    }
+	            flight.DestinationCode = itemTapped.Code;
+	            flight.Destination = itemTapped.Name;
+	            this.localDb.UpdateFlight(flight);
+	            await Navigation.PushAsync(new FlightSearchPage());
+	        }	      
+	        else
+	        {
+                var localFlight = new LocalDb.Flight()
+                {
+                    DestinationCode = itemTapped.Code,
+                    Destination = itemTapped.Name             
+                };
+                this.localDb.AddFlight(localFlight);
+	            await Navigation.PushAsync(new FlightSearchPage());
+            }
+        }
         
     }
 }

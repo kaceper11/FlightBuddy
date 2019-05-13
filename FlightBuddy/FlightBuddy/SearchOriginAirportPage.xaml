@@ -5,9 +5,9 @@
 
     <StackLayout Orientation="Vertical">
         <SearchBar x:Name="originAirportSearch"
-                   TextChanged="SearchAirports_Clicked"/>
+                   TextChanged="SearchAirports_TextChanged" Placeholder="Type your origin airport"/>
 
-        <ListView x:Name="airportSuggestions">
+        <ListView x:Name="airportSuggestions" ItemTapped="SetOriginAirport">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}" 
