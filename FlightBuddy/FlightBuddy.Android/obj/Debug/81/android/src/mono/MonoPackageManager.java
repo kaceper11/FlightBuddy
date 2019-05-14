@@ -116,6 +116,8 @@ class MonoPackageManager_Resources {
 		"PInvoke.Kernel32.dll",
 		"PInvoke.NCrypt.dll",
 		"PInvoke.Windows.Core.dll",
+		"Plugin.Messaging.Abstractions.dll",
+		"Plugin.Messaging.dll",
 		"SQLite-net.dll",
 		"SQLitePCLRaw.batteries_green.dll",
 		"SQLitePCLRaw.batteries_v2.dll",

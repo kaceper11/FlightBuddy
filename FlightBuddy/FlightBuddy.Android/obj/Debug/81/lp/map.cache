@@ -7,6 +7,8 @@ PInvoke.BCrypt
 PInvoke.Kernel32
 PInvoke.NCrypt
 PInvoke.Windows.Core
+Plugin.Messaging.Abstractions
+Plugin.Messaging
 SQLite-net
 SQLitePCLRaw.batteries_green
 SQLitePCLRaw.batteries_v2

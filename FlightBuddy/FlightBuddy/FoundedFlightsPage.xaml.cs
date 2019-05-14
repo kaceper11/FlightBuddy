@@ -44,7 +44,7 @@ namespace FlightBuddy
 	        }
 	        else
 	        {
-	            await Navigation.PushAsync(new FlightSearchPage());
+	            await Navigation.PopAsync();
 	            DependencyService.Get<IMessage>().LongAlert("No flights were found for given parameters");
             }
                 

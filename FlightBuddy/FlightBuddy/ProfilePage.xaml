@@ -5,12 +5,15 @@
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <StackLayout Margin="20, 40, 20, 0">
+            <Label Text="Name" Font="Bold,15"></Label>
             <Label x:Name="userName"
                    Text="" />
 
+            <Label Text="Mobile number" Font="Bold,15"></Label>
             <Label x:Name="userMobileNumber"
                    Text=""/>
 
+            <Label Text="Email" Font="Bold,15"></Label>
             <Label x:Name="userEmail"
                    Text=""/>
 

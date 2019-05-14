@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using FlightBuddy.Model;
 using FlightBuddy.ToastNotification;
@@ -36,27 +37,34 @@ namespace FlightBuddy
 	        {
 	            if (passwordEntry.Text == confirmPasswordEntry.Text)
 	            {
-	                var user = new User()
+	                if (IsPhoneNumber(mobileNumberEntry.Text) && IsValidEmail(emailEntry.Text))
 	                {
-	                    Email = emailEntry.Text,
-                        Password = passwordEntry.Text,
-	                    Name = nameEntry.Text,
-	                    MobileNumber = mobileNumberEntry.Text,
-	                };
+	                    var user = new User()
+	                    {
+	                        Email = emailEntry.Text,
+	                        Password = passwordEntry.Text,
+	                        Name = nameEntry.Text,
+	                        MobileNumber = mobileNumberEntry.Text,
+	                    };
 
-	                var userDb = await this.db.GetUserByEmail(emailEntry.Text);
+	                    var userDb = await this.db.GetUserByEmail(emailEntry.Text);
 
-	                if (userDb != null)
-	                {
-	                    DependencyService.Get<IMessage>().LongAlert("User with that email already exists");
-                    }
+	                    if (userDb != null)
+	                    {
+	                        DependencyService.Get<IMessage>().LongAlert("User with that email already exists");
+	                    }
+	                    else
+	                    {
+	                        this.db.AddUser(user);
+	                        App.User = user;
+	                        await Navigation.PushAsync(new HomePage());
+	                    }
+	                }
 	                else
 	                {
-	                    this.db.AddUser(user);
-                        App.User = user;
-                        await Navigation.PushAsync(new HomePage());
-	                }
-                }
+	                    DependencyService.Get<IMessage>().LongAlert("Mobile number or email address are not valid");
+                    }
+	            }
 	            else
 	            {
 	                DependencyService.Get<IMessage>().LongAlert("Passwords don't match");
@@ -74,6 +82,23 @@ namespace FlightBuddy
 	        Navigation.PushAsync(new LoginPage());
 	    }
 
+	    private static bool IsPhoneNumber(string number)
+	    {
+	        return Regex.Match(number, @"^(\+[0-9]{9})$").Success;
+	    }
+
+	    private bool IsValidEmail(string email)
+	    {
+	        try
+	        {
+	            var addr = new System.Net.Mail.MailAddress(email);
+	            return addr.Address == email;
+	        }
+	        catch
+	        {
+	            return false;
+	        }
+	    }
 
     }
 }

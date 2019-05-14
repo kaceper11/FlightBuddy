@@ -17,6 +17,9 @@ namespace FlightBuddy
             InitializeComponent(); 
             db = new FlightBuddyContext.FlightBuddyContext();
             localDb = new LocalDb.LocalDb();
+
+            var assembly = typeof(LoginPage);
+            iconImage.Source = ImageSource.FromResource("FlightBuddy.Assets.Images.app_icon.png", assembly);
         }
 
         private readonly FlightBuddyContext.FlightBuddyContext db;

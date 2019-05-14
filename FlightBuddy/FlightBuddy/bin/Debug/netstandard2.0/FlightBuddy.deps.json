@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "9784ec5fa776310d1f9f2ecf50830ca8260e57fa"
+    "signature": "e7576ea93d2ef53e2cfcb1afe970bf52acfe54f7"
   },
   "compilationOptions": {},
   "targets": {
@@ -12,6 +12,7 @@
           "Microsoft.Azure.Mobile.Client": "4.1.1",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.2",
+          "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.Forms": "3.4.0.1008975",
           "sqlite-net-pcl": "1.5.231",
           "Mono.Android": "0.0.0.0"
@@ -479,6 +480,21 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "Xam.Plugins.Messaging/5.2.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Messaging.Abstractions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "5.2.0.16"
+          },
+          "lib/netstandard1.0/Plugin.Messaging.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "5.2.0.16"
+          }
+        }
+      },
       "Xamarin.Forms/3.4.0.1008975": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
@@ -874,6 +890,13 @@
       "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
+    },
+    "Xam.Plugins.Messaging/5.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oTBg4tZjkkLHuUuXaybC/pwi0SugrJeyZ7Nq60IAxBliO7FMYaPq9mmmPQvCAEwEhtWaZAjbBzwG/I71CcQrmA==",
+      "path": "xam.plugins.messaging/5.2.0",
+      "hashPath": "xam.plugins.messaging.5.2.0.nupkg.sha512"
     },
     "Xamarin.Forms/3.4.0.1008975": {
       "type": "package",

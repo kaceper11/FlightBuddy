@@ -51,7 +51,7 @@ namespace FlightBuddy
 	            flight.DestinationCode = itemTapped.Code;
 	            flight.Destination = itemTapped.Name;
 	            this.localDb.UpdateFlight(flight);
-	            await Navigation.PushAsync(new FlightSearchPage());
+	            await Navigation.PopAsync();
 	        }	      
 	        else
 	        {
@@ -61,7 +61,7 @@ namespace FlightBuddy
                     Destination = itemTapped.Name             
                 };
                 this.localDb.AddFlight(localFlight);
-	            await Navigation.PushAsync(new FlightSearchPage());
+	            await Navigation.PopAsync();
             }
         }
         

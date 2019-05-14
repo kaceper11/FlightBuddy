@@ -11,6 +11,8 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\PInvoke.Kernel32.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\PInvoke.NCrypt.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\PInvoke.Windows.Core.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Plugin.Messaging.Abstractions.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Plugin.Messaging.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\SQLite-net.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\SQLitePCLRaw.batteries_green.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\SQLitePCLRaw.batteries_v2.dll

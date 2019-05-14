@@ -26,8 +26,10 @@ namespace FlightBuddy
 	    {
 	        base.OnAppearing();
 
-	        var user = await db.GetUserByEmail(App.User.Email);
+	        var user = await this.db.GetUserByEmail(App.User.Email);
 	        userEmail.Text = user.Email;
+	        userMobileNumber.Text = user.MobileNumber;
+	        userName.Text = user.Name;
 	    }
 
 	    private async void LogoutButton_Clicked(object sender, EventArgs e)

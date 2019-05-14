@@ -1,7 +1,5 @@
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\FlightBuddy.Android.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\FlightBuddy.Android.pdb
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\com.companyname.apk
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\com.companyname-Signed.apk
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\FlightBuddy.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\FlightBuddy.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\MonoAndroid,Version=v8.1.AssemblyAttributes.cs
@@ -14,7 +12,6 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\FlightBuddy.Android.csproj.CopyComplete
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\FlightBuddy.Android.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\FlightBuddy.Android.pdb
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\bin\com.companyname.apk
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\res\layout\tabbar.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\res\layout\toolbar.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\res\values\styles.xml
@@ -61,10 +58,16 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\Mono.Security.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\System.ServiceModel.Internals.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\FlightBuddy.dll.mdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\com.flightbuddy.apk
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\com.flightbuddy-Signed.apk
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\bin\com.flightbuddy.apk
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\res\xml\file_paths.xml
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\Plugin.Messaging.Abstractions.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\FlightBuddy.Android.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\FormsViewGroup.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Mono.Android.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\mscorlib.pdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Plugin.Messaging.Abstractions.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.Core.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.IdentityModel.pdb
@@ -84,13 +87,17 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.Web.Services.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Mono.Security.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.ServiceModel.Internals.pdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\Plugin.Messaging.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\FlightBuddy.dll.mdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Plugin.Messaging.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\FlightBuddy.dll.mdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Plugin.Messaging.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\FlightBuddy.Android.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\FormsViewGroup.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Mono.Android.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Mono.Security.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\mscorlib.pdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Plugin.Messaging.Abstractions.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.ComponentModel.Composition.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.Core.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.Data.pdb
@@ -112,3 +119,4 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\bin\Debug\netstandard2.0\FlightBuddy.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\FlightBuddy.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\FlightBuddy.dll.mdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Plugin.Messaging.dll.mdb

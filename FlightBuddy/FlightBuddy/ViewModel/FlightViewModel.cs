@@ -18,6 +18,8 @@ namespace FlightBuddy.ViewModel
 
         public string Origin { get; set; }
 
+        public string Airline { get; set; }
+
         public string Destination { get; set; }
 
         public DateTime LeaveTimeAirport { get; set; }

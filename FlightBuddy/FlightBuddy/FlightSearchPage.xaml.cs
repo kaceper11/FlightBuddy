@@ -17,8 +17,13 @@ namespace FlightBuddy
 		{
 			InitializeComponent ();
             this.localDb = new LocalDb.LocalDb();
-            this.SetSearchParameters();
+            
 		}
+
+	    protected override void OnAppearing()
+	    {
+            this.SetSearchParameters();
+	    }
 
 	    private readonly LocalDb.LocalDb localDb;
 

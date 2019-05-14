@@ -52,7 +52,7 @@ namespace FlightBuddy.FlightBuddyContext
 
         public async Task<IEnumerable<FlightViewModel>> GetUserFlights(string userId)
         {
-            return from user in (await this.Users.ToListAsync())
+            var xd =  from user in (await this.Users.ToListAsync())
                 join userFlight in (await this.UserFlights.ToListAsync()) on user.Id equals userFlight.UserId
                    join flight in (await this.Flights.ToListAsync()) on userFlight.FlightId equals flight.Id
                    where user.Id == userId
@@ -60,13 +60,16 @@ namespace FlightBuddy.FlightBuddyContext
                    {
                        Id = flight.Id,
                        AirlineCode = flight.AirlineCode,
+                       Destination = flight.Destination,
+                       Origin = flight.Origin,
+                       Airline = flight.Airline,
                        ArrivalTimeAirport = flight.ArrivalTimeAirport,
                        DestinationCode = flight.DestinationCode,
                        FlightNumber = flight.FlightNumber,
                        LeaveTimeAirport = flight.LeaveTimeAirport,
                        OriginCode = flight.OriginCode
                    };
-
+            return xd;
         }
 
         public async Task<IEnumerable<UserFriendViewModel>> GetUserFriends(string userId)
@@ -88,11 +91,24 @@ namespace FlightBuddy.FlightBuddyContext
 
         }
 
-        public IEnumerable<FlightViewModel> GetCommonFlights(string userId, string friendId)
+        public async Task<IEnumerable<FlightViewModel>> GetCommonFlights(string userId, string friendId)
         {
-            var userFlights = this.GetUserFlights(userId);
-            var friendFlights = this.GetUserFlights(friendId);
-            return userFlights.Result.Intersect(friendFlights.Result);
+            var userFlights = await this.GetUserFlights(userId);
+            var friendFlights = await this.GetUserFlights(friendId);
+            return from userFlight in userFlights
+                join friendFlight in friendFlights on userFlight.Id equals friendFlight.Id
+                select new FlightViewModel()
+                {
+                    AirlineCode = userFlight.AirlineCode,
+                    Destination = userFlight.Destination,
+                    Origin = userFlight.Origin,
+                    Airline = userFlight.Airline,
+                    ArrivalTimeAirport = userFlight.ArrivalTimeAirport,
+                    DestinationCode = userFlight.DestinationCode,
+                    FlightNumber = userFlight.FlightNumber,
+                    LeaveTimeAirport = userFlight.LeaveTimeAirport,
+                    OriginCode = userFlight.OriginCode
+                };
         }
 
 
@@ -110,12 +126,12 @@ namespace FlightBuddy.FlightBuddyContext
 
         public async Task<string> GetFlightIdByDetails(Flight flight)
         {
-            return  (await this.Flights.ToListAsync()).Where(f => f.AirlineCode == flight.AirlineCode
-                                                               && f.ArrivalTimeAirport == flight.ArrivalTimeAirport
-                                                               && f.DestinationCode == flight.DestinationCode
-                                                               && f.OriginCode == flight.OriginCode
-                                                               && f.LeaveTimeAirport == flight.LeaveTimeAirport
-                                                               && f.FlightNumber == flight.FlightNumber).SingleOrDefault().Id;
+            return  (await this.Flights.ToListAsync()).SingleOrDefault(f => f.AirlineCode == flight.AirlineCode
+                                                                                    && f.ArrivalTimeAirport == flight.ArrivalTimeAirport
+                                                                                    && f.DestinationCode == flight.DestinationCode
+                                                                                    && f.OriginCode == flight.OriginCode
+                                                                                    && f.LeaveTimeAirport == flight.LeaveTimeAirport
+                                                                                    && f.FlightNumber == flight.FlightNumber).Id;
         }
 
         public async Task<bool> CheckIfFlightExists(Flight flight)

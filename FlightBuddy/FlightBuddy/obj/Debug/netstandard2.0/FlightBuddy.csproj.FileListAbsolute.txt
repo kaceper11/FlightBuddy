@@ -21,6 +21,6 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netsta
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.csproj.CopyComplete
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.pdb
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\SearchOriginAirportPage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\SearchDestinationAirportPage.xaml.g.cs
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\XamlC.stamp
