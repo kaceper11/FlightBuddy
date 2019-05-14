@@ -84,7 +84,7 @@ namespace FlightBuddy
 
 	    private static bool IsPhoneNumber(string number)
 	    {
-	        return Regex.Match(number, @"^(\+[0-9]{9})$").Success;
+	        return Regex.Match(number, @"^\+[1-9]{1}[0-9]{3,14}$").Success;
 	    }
 
 	    private bool IsValidEmail(string email)

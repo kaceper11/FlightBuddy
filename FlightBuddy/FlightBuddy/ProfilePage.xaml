@@ -4,23 +4,31 @@
              x:Class="FlightBuddy.ProfilePage"
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <StackLayout Margin="20, 40, 20, 0">
-            <Label Text="Name" Font="Bold,15"></Label>
-            <Label x:Name="userName"
-                   Text="" />
+        <ScrollView>
+            <StackLayout Margin="20, 40, 20, 0">
+                <Image x:Name="selectedProfileImage"></Image>
+                <Label Text="Name" Font="Bold,15"></Label>
+                <Label x:Name="userName"
+                       Text="" />
 
-            <Label Text="Mobile number" Font="Bold,15"></Label>
-            <Label x:Name="userMobileNumber"
-                   Text=""/>
+                <Label Text="Mobile number" Font="Bold,15"></Label>
+                <Label x:Name="userMobileNumber"
+                       Text=""/>
 
-            <Label Text="Email" Font="Bold,15"></Label>
-            <Label x:Name="userEmail"
-                   Text=""/>
+                <Label Text="Email" Font="Bold,15"></Label>
+                <Label x:Name="userEmail"
+                       Text=""/>
 
-            <Button x:Name="logoutButton"
-                    Text="Logout"
-                    Clicked="LogoutButton_Clicked"
-                    HorizontalOptions="End"></Button>
-        </StackLayout>
+                <Button x:Name="pictureButton"
+                        Text="Select your profile picture"
+                        Clicked="PictureButton_Clicked" Margin="0, 15, 0, 15"
+                        BackgroundColor="{StaticResource blueColor}" TextColor="{StaticResource whiteColor}"></Button>
+
+                <Button x:Name="logoutButton"
+                        Text="Logout"
+                        Clicked="LogoutButton_Clicked"
+                        HorizontalOptions="End" Margin="0, 0, 0, 15"></Button>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

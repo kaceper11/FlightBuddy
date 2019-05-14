@@ -9,6 +9,7 @@ using Android.Widget;
 using Android.OS;
 using System.IO;
 using System.Net;
+using Plugin.CurrentActivity;
 using Environment = System.Environment;
 
 namespace FlightBuddy.Droid
@@ -30,7 +31,15 @@ namespace FlightBuddy.Droid
             string folderPath = Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fullPath = Path.Combine(folderPath, dbName);
 
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+
             LoadApplication(new App(fullPath));
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
+        {
+            Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
         private MobileServiceUser user;
