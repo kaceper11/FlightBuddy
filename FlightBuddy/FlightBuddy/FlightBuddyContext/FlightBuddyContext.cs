@@ -45,6 +45,16 @@ namespace FlightBuddy.FlightBuddyContext
             return (await this.Users.ToListAsync()).FirstOrDefault(user => user.Id == userId);
         }
 
+        public async void UpdateUser(User user)
+        {
+            await this.Users.UpdateAsync(user);
+        }
+
+        public async Task<string> GetUsersProfilePicture(string userId)
+        {
+            return (await this.Users.ToListAsync()).FirstOrDefault(user => user.Id == userId).ProfilePictureUrl;
+        }
+
         public async Task<bool> CheckIfUserExists(string email)
         {
             return (await this.Users.ToListAsync()).Any(user => user.Email == email);
@@ -52,7 +62,7 @@ namespace FlightBuddy.FlightBuddyContext
 
         public async Task<IEnumerable<FlightViewModel>> GetUserFlights(string userId)
         {
-            var xd =  from user in (await this.Users.ToListAsync())
+            return  from user in (await this.Users.ToListAsync())
                 join userFlight in (await this.UserFlights.ToListAsync()) on user.Id equals userFlight.UserId
                    join flight in (await this.Flights.ToListAsync()) on userFlight.FlightId equals flight.Id
                    where user.Id == userId
@@ -69,7 +79,6 @@ namespace FlightBuddy.FlightBuddyContext
                        LeaveTimeAirport = flight.LeaveTimeAirport,
                        OriginCode = flight.OriginCode
                    };
-            return xd;
         }
 
         public async Task<IEnumerable<UserFriendViewModel>> GetUserFriends(string userId)
@@ -86,7 +95,8 @@ namespace FlightBuddy.FlightBuddyContext
                         Id = user.Id,
                        Email = user.Email,
                         MobileNumber = user.MobileNumber,
-                        Name = user.Name
+                        Name = user.Name, 
+                        ProfilePictureUrl = user.ProfilePictureUrl
                     };
 
         }

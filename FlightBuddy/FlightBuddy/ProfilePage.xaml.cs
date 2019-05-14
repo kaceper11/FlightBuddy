@@ -34,6 +34,7 @@ namespace FlightBuddy
 	        userEmail.Text = user.Email;
 	        userMobileNumber.Text = user.MobileNumber;
 	        userName.Text = user.Name;
+	        SetUserProfilePicture();
 	    }
 
 	    private async void LogoutButton_Clicked(object sender, EventArgs e)
@@ -74,10 +75,10 @@ namespace FlightBuddy
 
 	        selectedProfileImage.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
 
-	        UploadImage(selectedImageFile.GetStream());
+	        await UploadImage(selectedImageFile.GetStream());
 	    }
 
-	    private async void UploadImage(Stream stream)
+	    private async Task<string> UploadImage(Stream stream)
 	    {
 	        var account = CloudStorageAccount.Parse(
 	            "DefaultEndpointsProtocol=https;AccountName=flightbuddystorage;AccountKey=WTXwA6tF6pr7ziQlWrCwJ+h2YNFomhxm3sr6OAA+udn9Y62pizWnZYZb1xnV6OPVpQM4yNdhZvY+l8cx/nRpZQ==;EndpointSuffix=core.windows.net");
@@ -90,8 +91,30 @@ namespace FlightBuddy
 	        var blockBlob = container.GetBlockBlobReference($"{name}.jpg");
 
 	        await blockBlob.UploadFromStreamAsync(stream);
-	        string url = blockBlob.Uri.OriginalString;
+	        this.UpdateUserProfilePicture(blockBlob.Uri.OriginalString);
 
+            return blockBlob.Uri.OriginalString;
+
+	    }
+
+	    private async void SetUserProfilePicture()
+	    {
+	        var image = await this.db.GetUsersProfilePicture(App.User.Id);
+	        bool isImageNotNull = !string.IsNullOrEmpty(image);
+	        if (isImageNotNull)
+	        {
+	            selectedProfileImage.Source = image;
+	        }
+	        else
+	        {
+	            selectedProfileImage.Source = string.Empty;
+	        }
+	    }
+
+	    private void UpdateUserProfilePicture(string pictureUrl)
+	    {
+	        App.User.ProfilePictureUrl = pictureUrl;
+            this.db.UpdateUser(App.User);
 	    }
 	}
 }

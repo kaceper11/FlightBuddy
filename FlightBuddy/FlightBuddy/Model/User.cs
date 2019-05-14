@@ -15,5 +15,7 @@ namespace FlightBuddy.Model
         public string Name { get; set; }
 
         public string MobileNumber { get; set; }
+
+        public string ProfilePictureUrl { get; set; }
     }
 }
