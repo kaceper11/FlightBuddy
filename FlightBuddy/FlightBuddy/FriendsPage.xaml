@@ -7,7 +7,16 @@
     <ListView x:Name="friendsListView" ItemTapped="UserFriend_Clicked" RowHeight="80">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ImageCell ImageSource="{Binding ProfilePictureUrl}" Text="{Binding Name}" TextColor="{StaticResource blueColor}"/>
+                <ViewCell>
+                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="10">
+
+                        <Image Aspect="AspectFill"
+                               HeightRequest ="75" WidthRequest="75"
+                               Source="{Binding ProfilePictureUrl}" />
+
+                        <Label Text="{Binding Name}" YAlign="Center" Font="20" TextColor="{StaticResource blueColor}"/>
+                    </StackLayout>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

@@ -75,8 +75,8 @@ namespace FlightBuddy
 
 	        //selectedProfileImage.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
 
-	        var image = await UploadImage(selectedImageFile.GetStream());
-	        selectedProfileImage.Source = image;
+	        await UploadImage(selectedImageFile.GetStream());
+	        //selectedProfileImage.Source = image;
 
 	    }
 
@@ -95,7 +95,7 @@ namespace FlightBuddy
 	        await blockBlob.UploadFromStreamAsync(stream);
 	        this.UpdateUserProfilePicture(blockBlob.Uri.OriginalString);
 
-	        //selectedProfileImage.Source = blockBlob.Uri.OriginalString;
+	        selectedProfileImage.Source = blockBlob.Uri.OriginalString;
 
             return blockBlob.Uri.OriginalString;
 
@@ -103,16 +103,20 @@ namespace FlightBuddy
 
 	    private async void SetUserProfilePicture()
 	    {
-	        var image = await this.db.GetUsersProfilePicture(App.User.Id);
-	        bool isImageNotNull = !string.IsNullOrEmpty(image);
-	        if (isImageNotNull)
+	        if (selectedProfileImage.Source == null)
 	        {
-	            selectedProfileImage.Source = image;
-	        }
-	        else
-	        {
-	            selectedProfileImage.Source = string.Empty;
-	        }
+	            var image = await this.db.GetUsersProfilePicture(App.User.Id);
+	            bool isImageNotNull = !string.IsNullOrEmpty(image);
+	            if (isImageNotNull)
+	            {
+	                selectedProfileImage.Source = image;
+	            }
+	            else
+	            {
+	                selectedProfileImage.Source = string.Empty;
+	            }
+	        }	      
+
 	    }
 
 	    private async void UpdateUserProfilePicture(string pictureUrl)

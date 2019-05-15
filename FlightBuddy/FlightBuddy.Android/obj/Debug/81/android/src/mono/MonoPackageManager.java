@@ -107,6 +107,10 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "FlightBuddy.Android.dll" comes first in this list. */
 		"FlightBuddy.Android.dll",
+		"FFImageLoading.dll",
+		"FFImageLoading.Forms.dll",
+		"FFImageLoading.Forms.Platform.dll",
+		"FFImageLoading.Platform.dll",
 		"FlightBuddy.dll",
 		"FormsViewGroup.dll",
 		"Microsoft.Azure.Mobile.Client.dll",
