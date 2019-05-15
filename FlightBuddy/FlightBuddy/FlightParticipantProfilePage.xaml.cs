@@ -25,7 +25,15 @@ namespace FlightBuddy
 
 	    private User UserFriend { get; set; }
 
-	    private async void LikeButton_Clicked(object sender, EventArgs e)
+	    protected override async void OnAppearing()
+	    {
+	        base.OnAppearing();
+	        var userFriend = await this.db.GetUserById(this.UserFriendId);
+	        flightParticipantName.Text = userFriend.Name;
+	        profileImage.Source = userFriend.ProfilePictureUrl;
+	    }
+
+        private async void LikeButton_Clicked(object sender, EventArgs e)
 	    {
             var userFriend = new UserFriend()
             {
