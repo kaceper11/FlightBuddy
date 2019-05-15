@@ -93,10 +93,8 @@ namespace FlightBuddy.FlightBuddyContext
                    select new UserFriendViewModel()
                     {
                         Id = user.Id,
-                       Email = user.Email,
-                        MobileNumber = user.MobileNumber,
                         Name = user.Name, 
-                        ProfilePictureUrl = user.ProfilePictureUrl
+                        ProfilePictureUrl = user.ProfilePictureUrl ?? string.Empty
                     };
 
         }

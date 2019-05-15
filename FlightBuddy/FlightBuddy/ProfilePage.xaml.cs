@@ -73,9 +73,11 @@ namespace FlightBuddy
                 return;
             }
 
-	        selectedProfileImage.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
+	        //selectedProfileImage.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
 
-	        await UploadImage(selectedImageFile.GetStream());
+	        var image = await UploadImage(selectedImageFile.GetStream());
+	        selectedProfileImage.Source = image;
+
 	    }
 
 	    private async Task<string> UploadImage(Stream stream)
@@ -92,6 +94,8 @@ namespace FlightBuddy
 
 	        await blockBlob.UploadFromStreamAsync(stream);
 	        this.UpdateUserProfilePicture(blockBlob.Uri.OriginalString);
+
+	        //selectedProfileImage.Source = blockBlob.Uri.OriginalString;
 
             return blockBlob.Uri.OriginalString;
 
@@ -111,10 +115,11 @@ namespace FlightBuddy
 	        }
 	    }
 
-	    private void UpdateUserProfilePicture(string pictureUrl)
+	    private async void UpdateUserProfilePicture(string pictureUrl)
 	    {
-	        App.User.ProfilePictureUrl = pictureUrl;
-            this.db.UpdateUser(App.User);
+	        var user = await this.db.GetUserById(App.User.Id);
+	        user.ProfilePictureUrl = pictureUrl;
+            this.db.UpdateUser(user);
 	    }
 	}
 }

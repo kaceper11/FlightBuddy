@@ -7,16 +7,7 @@
     <ListView x:Name="friendsListView" ItemTapped="UserFriend_Clicked" RowHeight="80">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <ViewCell.View>
-                        <StackLayout>
-                            <Label Text="{Binding Id}" TextColor="{StaticResource blueColor}" IsVisible="false"/>
-                            <Label Text="{Binding Name}" TextColor="{StaticResource blueColor}" />
-                            <Label Text="{Binding Email}" TextColor="{StaticResource blueColor}" />
-                            <Label Text="{Binding MobileNumber}" TextColor="{StaticResource blueColor}" />
-                        </StackLayout>
-                    </ViewCell.View>
-                </ViewCell>
+                <ImageCell ImageSource="{Binding ProfilePictureUrl}" Text="{Binding Name}" TextColor="{StaticResource blueColor}"/>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

@@ -18,6 +18,7 @@ namespace FlightBuddy
             InitializeComponent();
             db = new FlightBuddyContext.FlightBuddyContext();
             this.UserFriendId = userId;
+            this.SetUserProfilePicture(userId);
         }
 
         private readonly FlightBuddyContext.FlightBuddyContext db;
@@ -66,5 +67,19 @@ namespace FlightBuddy
 	        if (smsMessenger.CanSendSms)
 	            smsMessenger.SendSms(this.UserFriend.MobileNumber, $"Hey! This is {App.User.Name} from FlightBuddy :D");
         }
-	}
+
+	    private async void SetUserProfilePicture(string userId)
+	    {
+	        var image = await this.db.GetUsersProfilePicture(userId);
+	        bool isImageNotNull = !string.IsNullOrEmpty(image);
+	        if (isImageNotNull)
+	        {
+	            profileImage.Source = image;
+	        }
+	        else
+	        {
+	            profileImage.Source = string.Empty;
+	        }
+	    }
+    }
 }

@@ -119,6 +119,8 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\bin\Debug\netstandard2.0\FlightBuddy.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\FlightBuddy.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\FlightBuddy.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Microsoft.WindowsAzure.Storage.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Plugin.Messaging.dll.mdb

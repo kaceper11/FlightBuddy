@@ -6,6 +6,9 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="20, 40, 20, 0">
+
+                <Image x:Name="profileImage">
+                </Image>
                 <Label Text="Name" Font="Bold,15"></Label>
                 <Label x:Name="userFriendName"
                     Text="" />
@@ -18,11 +21,11 @@
                 <Button x:Name="sendSmsButton"
                         Text="Send sms" BackgroundColor="GreenYellow"
                         Clicked="SendSmsButton_Clicked"
-                        Margin="15, 20, 15, 0">></Button>
+                        Margin="15, 20, 15, 0"></Button>
                 <Button x:Name="makeCallButton"
                         Text="Make a call" BackgroundColor="Yellow"
                         Clicked="MakeCallButton_Clicked"
-                        Margin="15, 20, 15, 0">></Button>
+                        Margin="15, 20, 15, 0"></Button>
                 <Button x:Name="sendEmailButton"
                         Text="Send email" BackgroundColor="Orange"
                         Clicked="SendEmailButton_Clicked"
