@@ -23,8 +23,6 @@ namespace FlightBuddy
 
 	    private string UserFriendId { get; set; }
 
-	    private User UserFriend { get; set; }
-
 	    protected override async void OnAppearing()
 	    {
 	        base.OnAppearing();

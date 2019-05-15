@@ -57,7 +57,7 @@ namespace FlightBuddy.FlightBuddyContext
 
         public async Task<bool> CheckIfUserExists(string email)
         {
-            return (await this.Users.ToListAsync()).Any(user => user.Email == email);
+            return !(await this.Users.ToListAsync()).Any(user => user.Email == email);
         }
 
         public async Task<IEnumerable<FlightViewModel>> GetUserFlights(string userId)
@@ -103,6 +103,7 @@ namespace FlightBuddy.FlightBuddyContext
         {
             var userFlights = await this.GetUserFlights(userId);
             var friendFlights = await this.GetUserFlights(friendId);
+
             return from userFlight in userFlights
                 join friendFlight in friendFlights on userFlight.Id equals friendFlight.Id
                 select new FlightViewModel()
@@ -157,7 +158,7 @@ namespace FlightBuddy.FlightBuddyContext
             return from user in (await this.Users.ToListAsync())
                 join userFlight in (await this.UserFlights.ToListAsync()) on user.Id equals userFlight.UserId
                 join flight in (await this.Flights.ToListAsync()) on userFlight.FlightId equals flight.Id
-                where flight.Id == flightId
+                where flight.Id == flightId && user.Id != App.User.Id
                 select new UserFriendViewModel()
                 {
                     Id = user.Id,
@@ -177,7 +178,7 @@ namespace FlightBuddy.FlightBuddyContext
 
         public async Task<bool> CheckIfUserFriendExists(UserFriend userFriend)
         {
-            return (await this.UserFriends.ToListAsync()).Any(uf => uf.FriendId == userFriend.FriendId
+            return !(await this.UserFriends.ToListAsync()).Any(uf => uf.FriendId == userFriend.FriendId
                                                                            && uf.UserId == userFriend.UserId);
         }
 
@@ -190,7 +191,7 @@ namespace FlightBuddy.FlightBuddyContext
 
         public async Task<bool> CheckIfUserFlightExists(UserFlight userFlight)
         {
-            return (await this.UserFlights.ToListAsync()).Any(uf => uf.FlightId == userFlight.FlightId
+            return !(await this.UserFlights.ToListAsync()).Any(uf => uf.FlightId == userFlight.FlightId
                                                                            && uf.UserId == userFlight.UserId);
         }
     }

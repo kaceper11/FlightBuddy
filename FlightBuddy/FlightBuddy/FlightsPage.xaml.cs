@@ -35,8 +35,8 @@ namespace FlightBuddy
 
 	    private async void UserFlight_Clicked(object sender, ItemTappedEventArgs e)
 	    {
-            var itemTapped = e.Item as UserFriendViewModel;
-            await Navigation.PushAsync(new UserFriendProfilePage(itemTapped.Id));
+            var itemTapped = e.Item as FlightViewModel;
+            await Navigation.PushAsync(new FlightParticipantsPage(itemTapped.Id));
         }
 
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlightBuddy.Model;
+using FlightBuddy.ToastNotification;
 using FlightBuddy.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -27,7 +28,17 @@ namespace FlightBuddy
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            flightParticipantsListView.ItemsSource = await this.db.GetFlightParticipants(App.User.Id);
+            var participants = await this.db.GetFlightParticipants(this.FlightId);
+            if (participants != null)
+            {
+                flightParticipantsListView.ItemsSource = await this.db.GetFlightParticipants(this.FlightId);
+            }
+            else
+            {
+                DependencyService.Get<IMessage>().LongAlert("There are no participants for this flight");
+                await Navigation.PopAsync();
+            }
+            
         }
 
         private async void OpenFlightParticipants_Clicked(object sender, ItemTappedEventArgs e)
