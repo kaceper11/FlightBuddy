@@ -35,6 +35,7 @@ namespace FlightBuddy
             userFriendName.Text = userFriend.Name;
             userFriendEmail.Text = userFriend.Email;
             userFriendMobileNumber.Text = userFriend.MobileNumber;
+            userFriendBio.Text = userFriend.Bio;
             this.UserFriend = userFriend;
             commonFlightsListView.ItemsSource = await this.db.GetCommonFlights(App.User.Id, userFriend.Id);
         }

@@ -23,6 +23,9 @@ namespace FlightBuddy {
         private global::Xamarin.Forms.Label flightParticipantName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label flightParticipantBio;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Button likeButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -30,6 +33,7 @@ namespace FlightBuddy {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(FlightParticipantProfilePage));
             profileImage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "profileImage");
             flightParticipantName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "flightParticipantName");
+            flightParticipantBio = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "flightParticipantBio");
             likeButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "likeButton");
         }
     }

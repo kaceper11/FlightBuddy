@@ -19,9 +19,18 @@
                 <Label x:Name="userEmail"
                        Text=""/>
 
+                <Label Text="Bio" Font="Bold,15"></Label>
+                <Label x:Name="userBio"
+                       Text=""/>
+
                 <Button x:Name="pictureButton"
                         Text="Select your profile picture"
                         Clicked="PictureButton_Clicked" Margin="0, 15, 0, 15"
+                        BackgroundColor="{StaticResource blueColor}" TextColor="{StaticResource whiteColor}"></Button>
+
+                <Button x:Name="updateProfileButton"
+                        Text="Update bio and profile"
+                        Clicked="UpdateProfileButton_Clicked" Margin="0, 15, 0, 15"
                         BackgroundColor="{StaticResource blueColor}" TextColor="{StaticResource whiteColor}"></Button>
 
                 <Button x:Name="logoutButton"

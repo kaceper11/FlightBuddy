@@ -12,6 +12,10 @@
                 <Label x:Name="flightParticipantName"
                     Text="" />
 
+                <Label Text="Bio" Font="Bold,15"></Label>
+                <Label x:Name="flightParticipantBio"
+                       Text="" />
+
                 <Button x:Name="likeButton"
                         TextColor="White"
                         Text="Like" BackgroundColor="Green"

@@ -52,7 +52,7 @@ namespace FlightBuddy.FlightBuddyContext
 
         public async Task<string> GetUsersProfilePicture(string userId)
         {
-            return (await this.Users.ToListAsync()).FirstOrDefault(user => user.Id == userId).ProfilePictureUrl;
+            return (await this.Users.ToListAsync()).FirstOrDefault(user => user.Id == userId).ProfilePictureUrl ?? string.Empty;
         }
 
         public async Task<bool> CheckIfUserExists(string email)
@@ -94,6 +94,7 @@ namespace FlightBuddy.FlightBuddyContext
                     {
                         Id = user.Id,
                         Name = user.Name, 
+                        Bio = user.Bio ?? string.Empty,
                         ProfilePictureUrl = user.ProfilePictureUrl ?? string.Empty
                     };
 
@@ -165,6 +166,7 @@ namespace FlightBuddy.FlightBuddyContext
                     Email = user.Email,
                     MobileNumber = user.MobileNumber,
                     Name = user.Name,
+                    Bio = user.Bio ?? string.Empty,
                     ProfilePictureUrl = user.ProfilePictureUrl ?? string.Empty
                 };
         }

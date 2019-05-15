@@ -18,6 +18,9 @@
                 <Label Text="Email" Font="Bold,15"></Label>
                 <Label x:Name="userFriendEmail"
                        Text=""/>
+                <Label Text="Bio" Font="Bold,15"></Label>
+                <Label x:Name="userFriendBio"
+                       Text=""/>
                 <Button x:Name="sendSmsButton"
                         Text="Send sms" BackgroundColor="GreenYellow"
                         Clicked="SendSmsButton_Clicked"

@@ -34,6 +34,7 @@ namespace FlightBuddy
 	        userEmail.Text = user.Email;
 	        userMobileNumber.Text = user.MobileNumber;
 	        userName.Text = user.Name;
+	        userBio.Text = user.Bio;
 	        SetUserProfilePicture();
 	    }
 
@@ -96,6 +97,7 @@ namespace FlightBuddy
 	        this.UpdateUserProfilePicture(blockBlob.Uri.OriginalString);
 
 	        selectedProfileImage.Source = blockBlob.Uri.OriginalString;
+            App.User.ProfilePictureUrl = blockBlob.Uri.OriginalString;
 
             return blockBlob.Uri.OriginalString;
 
@@ -110,6 +112,7 @@ namespace FlightBuddy
 	            if (isImageNotNull)
 	            {
 	                selectedProfileImage.Source = image;
+	                App.User.ProfilePictureUrl = image;
 	            }
 	            else
 	            {
@@ -124,6 +127,11 @@ namespace FlightBuddy
 	        var user = await this.db.GetUserById(App.User.Id);
 	        user.ProfilePictureUrl = pictureUrl;
             this.db.UpdateUser(user);
+	    }
+
+	    private async void  UpdateProfileButton_Clicked(object sender, EventArgs e)
+	    {
+	        await Navigation.PushAsync(new UpdateProfilePage());
 	    }
 	}
 }
