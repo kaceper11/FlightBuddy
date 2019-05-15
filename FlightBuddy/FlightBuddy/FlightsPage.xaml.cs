@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlightBuddy.Model;
+using FlightBuddy.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -34,9 +35,9 @@ namespace FlightBuddy
 
 	    private async void UserFlight_Clicked(object sender, ItemTappedEventArgs e)
 	    {
-	        //var itemTapped = e.Item as UserFriendViewModel;
-	        //await Navigation.PushAsync(new UserFriendProfilePage(itemTapped.Email));
-	    }
+            var itemTapped = e.Item as UserFriendViewModel;
+            await Navigation.PushAsync(new UserFriendProfilePage(itemTapped.Id));
+        }
 
     }
 }

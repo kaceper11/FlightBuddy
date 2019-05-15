@@ -152,6 +152,22 @@ namespace FlightBuddy.FlightBuddyContext
                                                                       && f.FlightNumber == flight.FlightNumber);
         }
 
+        public async Task<IEnumerable<UserFriendViewModel>> GetFlightParticipants(string flightId)
+        {
+            return from user in (await this.Users.ToListAsync())
+                join userFlight in (await this.UserFlights.ToListAsync()) on user.Id equals userFlight.UserId
+                join flight in (await this.Flights.ToListAsync()) on userFlight.FlightId equals flight.Id
+                where flight.Id == flightId
+                select new UserFriendViewModel()
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    MobileNumber = user.MobileNumber,
+                    Name = user.Name,
+                    ProfilePictureUrl = user.ProfilePictureUrl
+                };
+        }
+
         // UserFriend queries
 
         public void AddUserFriend(UserFriend userFriend)

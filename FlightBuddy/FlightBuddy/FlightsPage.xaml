@@ -11,11 +11,10 @@
                 <ViewCell>
                     <ViewCell.View>
                         <StackLayout>
-                            <Label Text="{Binding Id}" TextColor="{StaticResource blueColor}" IsVisible="false"/>
                             <Label Text="{Binding FlightNumber}" TextColor="{StaticResource blueColor}" />
-                            <Label Text="{Binding AirlineCode}" TextColor="{StaticResource blueColor}" />
-                            <Label Text="{Binding OriginCode}" TextColor="{StaticResource blueColor}" />
-                            <Label Text="{Binding DestinationCode}" TextColor="{StaticResource blueColor}" />
+                            <Label Text="{Binding Airline}" TextColor="{StaticResource blueColor}" />
+                            <Label Text="{Binding Origin}" TextColor="{StaticResource blueColor}" />
+                            <Label Text="{Binding Destination}" TextColor="{StaticResource blueColor}" />
                             <Label Text="{Binding LeaveTimeAirport}" TextColor="{StaticResource blueColor}" />
                             <Label Text="{Binding ArrivalTimeAirport}" TextColor="{StaticResource blueColor}" />
                         </StackLayout>
