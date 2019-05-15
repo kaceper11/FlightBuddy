@@ -39,12 +39,13 @@ namespace FlightBuddy
             this.SetUserProfileData();
 	    }
 
-	    private void SetUserProfileData()
+	    private async void SetUserProfileData()
 	    {
-	        nameEntry.Text = App.User.Name;
-	        emailEntry.Text = App.User.Email;
-	        mobileNumberEntry.Text = App.User.MobileNumber;
-	        bioEntry.Text = App.User.Bio ?? string.Empty;
+	        var currentUser = await this.db.GetUserById(App.User.Id);
+	        nameEntry.Text = currentUser.Name;
+	        emailEntry.Text = currentUser.Email;
+	        mobileNumberEntry.Text = currentUser.MobileNumber;
+	        bioEntry.Text = currentUser.Bio ?? string.Empty;
 	    }
 	}
 }

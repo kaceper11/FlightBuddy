@@ -30,7 +30,7 @@ namespace FlightBuddy
 	    {
 	        base.OnAppearing();
 
-	        var user = await this.db.GetUserByEmail(App.User.Email);
+	        var user = await this.db.GetUserById(App.User.Id);
 	        userEmail.Text = user.Email;
 	        userMobileNumber.Text = user.MobileNumber;
 	        userName.Text = user.Name;
@@ -48,7 +48,8 @@ namespace FlightBuddy
 
 	    private void DeleteFromLocalDb()
 	    {
-	        localDb.DeleteUsers();	        
+	        localDb.DeleteUsers();	
+            localDb.DeleteFlights();
 	    }
 
 	    private async void PictureButton_Clicked(object sender, EventArgs e)
@@ -74,11 +75,8 @@ namespace FlightBuddy
                 return;
             }
 
-	        //selectedProfileImage.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
 
 	        await UploadImage(selectedImageFile.GetStream());
-	        //selectedProfileImage.Source = image;
-
 	    }
 
 	    private async Task<string> UploadImage(Stream stream)
