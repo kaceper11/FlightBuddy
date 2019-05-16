@@ -27,3 +27,4 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netsta
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightParticipantProfilePage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightParticipantsPage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\UpdateProfilePage.xaml.g.cs
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\MyNewFlightPage.xaml.g.cs

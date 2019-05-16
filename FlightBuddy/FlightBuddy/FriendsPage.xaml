@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FlightBuddy.FriendsPage"
              NavigationPage.HasNavigationBar="false">
-
+<Grid>
     <ListView x:Name="friendsListView" ItemTapped="UserFriend_Clicked" RowHeight="80">
         <ListView.ItemTemplate>
             <DataTemplate>
@@ -20,4 +20,8 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+    <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" 
+                   VerticalOptions="Center" HorizontalOptions="Center" Color="{StaticResource blueColor}"></ActivityIndicator>
+</Grid>
+
 </ContentPage>

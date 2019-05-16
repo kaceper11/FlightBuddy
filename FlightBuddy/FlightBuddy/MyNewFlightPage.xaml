@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlightBuddy.MyNewFlightPage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20, 40, 20, 0">
+
+                <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" 
+                                   VerticalOptions="Center" HorizontalOptions="Center" Color="{StaticResource blueColor}"></ActivityIndicator>
+                <Label Text="Flight number" Font="Bold,15"></Label>
+                <Label x:Name="flightNumber"
+                       Text="" />
+
+                <Label Text="Airline" Font="Bold,15"></Label>
+                <Label x:Name="flightAirline"
+                       Text="" />
+
+                <Label Text="Origin" Font="Bold,15"></Label>
+                <Label x:Name="flightOrigin"
+                       Text="" />
+
+                <Label Text="Destination" Font="Bold,15"></Label>
+                <Label x:Name="flightDestination"
+                       Text="" />
+
+                <Label Text="Leave time" Font="Bold,15"></Label>
+                <Label x:Name="flightLeaveTime"
+                       Text="" />
+
+                <Label Text="Arrival time" Font="Bold,15"></Label>
+                <Label x:Name="flightArrivalTime"
+                       Text="" />
+
+                <Button x:Name="likeButton"
+                        TextColor="White"
+                        Text="Add to my flights" BackgroundColor="Green"
+                        Clicked="AddToMyFlights_Clicked"
+                        Margin="15, 20, 15, 20"></Button>
+
+            </StackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

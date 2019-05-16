@@ -26,6 +26,7 @@
                 TextColor="White"
                 Margin="0, 20, 0, 0"
                 Style="{StaticResource normalButton}"></Button>
-
+        <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" 
+                           VerticalOptions="Center" HorizontalOptions="Center" Color="{StaticResource blueColor}"></ActivityIndicator>
     </StackLayout>
 </ContentPage>

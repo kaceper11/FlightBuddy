@@ -17,12 +17,14 @@ namespace FlightBuddy
 		{
 			InitializeComponent ();
             this.localDb = new LocalDb.LocalDb();
-            
+		    this.BindingContext = this;
 		}
 
 	    protected override void OnAppearing()
 	    {
+	        this.IsBusy = true;
             this.SetSearchParameters();
+	        this.IsBusy = false;
 	    }
 
 	    private readonly LocalDb.LocalDb localDb;

@@ -136,22 +136,18 @@ namespace FlightBuddy.FlightBuddyContext
 
         public async Task<string> GetFlightIdByDetails(Flight flight)
         {
-            return  (await this.Flights.ToListAsync()).SingleOrDefault(f => f.AirlineCode == flight.AirlineCode
-                                                                                    && f.ArrivalTimeAirport == flight.ArrivalTimeAirport
-                                                                                    && f.DestinationCode == flight.DestinationCode
-                                                                                    && f.OriginCode == flight.OriginCode
-                                                                                    && f.LeaveTimeAirport == flight.LeaveTimeAirport
-                                                                                    && f.FlightNumber == flight.FlightNumber).Id;
+            return  (await this.Flights.ToListAsync()).SingleOrDefault(f => f.FlightNumber == flight.FlightNumber).Id;
         }
 
         public async Task<bool> CheckIfFlightExists(Flight flight)
         {
-            return (await this.Flights.ToListAsync()).Any(f => f.AirlineCode == flight.AirlineCode 
-                                                                      && f.ArrivalTimeAirport == flight.ArrivalTimeAirport
-                                                                      && f.DestinationCode == flight.DestinationCode
-                                                                      && f.OriginCode == flight.OriginCode
-                                                                      && f.LeaveTimeAirport == flight.LeaveTimeAirport
-                                                                      && f.FlightNumber == flight.FlightNumber);
+            return !(await this.Flights.ToListAsync()).Any(f => f.AirlineCode == flight.AirlineCode 
+                                                               && f.Airline == flight.Airline
+                                                               && f.Destination == flight.Destination
+                                                               && f.Origin == flight.Origin
+                                                              && f.DestinationCode == flight.DestinationCode
+                                                              && f.OriginCode == flight.OriginCode                                                    
+                                                              && f.FlightNumber == flight.FlightNumber);
         }
 
         public async Task<IEnumerable<UserFriendViewModel>> GetFlightParticipants(string flightId)

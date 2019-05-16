@@ -18,7 +18,7 @@ namespace FlightBuddy
             InitializeComponent();
             db = new FlightBuddyContext.FlightBuddyContext();
             this.UserFriendId = userId;
-            this.SetUserProfilePicture(userId);
+            this.BindingContext = this;
         }
 
         private readonly FlightBuddyContext.FlightBuddyContext db;
@@ -29,8 +29,10 @@ namespace FlightBuddy
 
         protected override async void OnAppearing()
         {
+            this.IsBusy = true;
             base.OnAppearing();
-
+            
+            this.SetUserProfilePicture(this.UserFriendId);
             var userFriend = await db.GetUserById(this.UserFriendId);
             userFriendName.Text = userFriend.Name;
             userFriendEmail.Text = userFriend.Email;
@@ -38,6 +40,8 @@ namespace FlightBuddy
             userFriendBio.Text = userFriend.Bio;
             this.UserFriend = userFriend;
             commonFlightsListView.ItemsSource = await this.db.GetCommonFlights(App.User.Id, userFriend.Id);
+
+            this.IsBusy = false;
         }
 
 	    private void SendEmailButton_Clicked(object sender, EventArgs e)

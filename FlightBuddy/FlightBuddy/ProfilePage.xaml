@@ -6,6 +6,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="20, 40, 20, 0">
+                <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" 
+                                   VerticalOptions="Center" HorizontalOptions="Center" Color="{StaticResource blueColor}"></ActivityIndicator>
                 <Image x:Name="selectedProfileImage"></Image>
                 <Label Text="Name" Font="Bold,15"></Label>
                 <Label x:Name="userName"
@@ -37,6 +39,7 @@
                         Text="Logout"
                         Clicked="LogoutButton_Clicked"
                         HorizontalOptions="End" Margin="0, 0, 0, 15"></Button>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -1,31 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FlightBuddy.FoundedFlightsPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="foundedFlightsListView"  RowHeight="160" ItemTapped="OpenFlightDetails">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout>
-                                    <Label Text="{Binding FlightNumber}" TextColor="{StaticResource blueColor}" />
-                                    <Label Text="{Binding Airline}" TextColor="{StaticResource blueColor}" />
-                                    <Label Text="{Binding Origin}" TextColor="{StaticResource blueColor}" />
-                                    <Label Text="{Binding Destination}" TextColor="{StaticResource blueColor}" />
-                                    <Label Text="{Binding LeaveTimeAirport}" TextColor="{StaticResource blueColor}" />
-                                    <Label Text="{Binding ArrivalTimeAirport}" TextColor="{StaticResource blueColor}" />
+             x:Class="FlightBuddy.FoundedFlightsPage" Title="Founded flights">
+    <Grid>
+        <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" 
+                           VerticalOptions="Center" HorizontalOptions="Center" Color="{StaticResource blueColor}"></ActivityIndicator>
+        <ListView x:Name="foundedFlightsListView"  RowHeight="160" ItemTapped="OpenFlightDetails">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding FlightNumber}" TextColor="{StaticResource blueColor}" />
+                                <Label Text="{Binding Airline}" TextColor="{StaticResource blueColor}" />
+                                <Label Text="{Binding Origin}" TextColor="{StaticResource blueColor}" />
+                                <Label Text="{Binding Destination}" TextColor="{StaticResource blueColor}" />
+                                <Label Text="{Binding LeaveTimeAirport}" TextColor="{StaticResource blueColor}" />
+                                <Label Text="{Binding ArrivalTimeAirport}" TextColor="{StaticResource blueColor}" />
 
-                                    <Label Text="{Binding AirlineCode}" IsVisible="false" TextColor="{StaticResource blueColor}" />
-                                    <Label Text="{Binding OriginCode}" IsVisible="false" TextColor="{StaticResource blueColor}" />
-                                    <Label Text="{Binding DestinationCode}" IsVisible="false" TextColor="{StaticResource blueColor}" />
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+                                <Label Text="{Binding AirlineCode}" IsVisible="false" TextColor="{StaticResource blueColor}" />
+                                <Label Text="{Binding OriginCode}" IsVisible="false" TextColor="{StaticResource blueColor}" />
+                                <Label Text="{Binding DestinationCode}" IsVisible="false" TextColor="{StaticResource blueColor}" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+
+
 </ContentPage>

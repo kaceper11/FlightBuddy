@@ -18,18 +18,21 @@ namespace FlightBuddy
 			InitializeComponent ();
 		    db = new FlightBuddyContext.FlightBuddyContext();
 		    this.UserFriendId = userId;
-        }
+		    this.BindingContext = this;
+		}
 	    private readonly FlightBuddyContext.FlightBuddyContext db;
 
 	    private string UserFriendId { get; set; }
 
 	    protected override async void OnAppearing()
 	    {
+	        this.IsBusy = true;
 	        base.OnAppearing();
 	        var userFriend = await this.db.GetUserById(this.UserFriendId);
 	        flightParticipantName.Text = userFriend.Name;
 	        flightParticipantBio.Text = userFriend.Bio;
 	        profileImage.Source = userFriend.ProfilePictureUrl;
+	        this.IsBusy = false;
 	    }
 
         private async void LikeButton_Clicked(object sender, EventArgs e)

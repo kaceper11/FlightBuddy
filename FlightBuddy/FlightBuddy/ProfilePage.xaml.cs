@@ -20,6 +20,7 @@ namespace FlightBuddy
 	        InitializeComponent();
             db = new FlightBuddyContext.FlightBuddyContext();
             localDb = new LocalDb.LocalDb();
+	        this.BindingContext = this;
 	    }
 
 	    private readonly FlightBuddyContext.FlightBuddyContext db;
@@ -29,13 +30,14 @@ namespace FlightBuddy
         protected override async void OnAppearing()
 	    {
 	        base.OnAppearing();
-
+	        this.IsBusy = true;
 	        var user = await this.db.GetUserById(App.User.Id);
 	        userEmail.Text = user.Email;
 	        userMobileNumber.Text = user.MobileNumber;
 	        userName.Text = user.Name;
 	        userBio.Text = user.Bio;
 	        SetUserProfilePicture();
+	        this.IsBusy = false;
 	    }
 
 	    private async void LogoutButton_Clicked(object sender, EventArgs e)

@@ -16,6 +16,7 @@ namespace FlightBuddy
 		{
 			InitializeComponent ();
             db = new FlightBuddyContext.FlightBuddyContext();
+		    this.BindingContext = this;
 		}
 
 	    private readonly FlightBuddyContext.FlightBuddyContext db;
@@ -34,10 +35,14 @@ namespace FlightBuddy
 	    }
 
         protected override void OnAppearing()
-	    {
+        {
+            this.IsBusy = true;
+
             base.OnAppearing();
             this.SetUserProfileData();
-	    }
+
+            this.IsBusy = false;
+        }
 
 	    private async void SetUserProfileData()
 	    {

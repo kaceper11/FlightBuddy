@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FlightBuddy.UserFriendProfilePage"
+             x:Class="FlightBuddy.UserFriendProfilePage" Title="Friend profile"
              >
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="20, 40, 20, 0">
-
+                <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" 
+                                   VerticalOptions="Center" HorizontalOptions="Center" Color="{StaticResource blueColor}"></ActivityIndicator>
                 <Image x:Name="profileImage">
                 </Image>
                 <Label Text="Name" Font="Bold,15"></Label>

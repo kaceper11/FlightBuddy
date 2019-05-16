@@ -17,6 +17,7 @@ namespace FlightBuddy
 		{
 			InitializeComponent ();
             db = new FlightBuddyContext.FlightBuddyContext();
+		    this.BindingContext = this;
 		}
 
 	    private readonly FlightBuddyContext.FlightBuddyContext db;
@@ -24,7 +25,9 @@ namespace FlightBuddy
 	    protected override async void OnAppearing()
 	    {
             base.OnAppearing();
+	        this.IsBusy = true;
 	        flightsListView.ItemsSource = await this.db.GetUserFlights(App.User.Id);
+	        this.IsBusy = false;
 	    }
 
         //private void flightsListView_Refreshing(object sender, EventArgs e)

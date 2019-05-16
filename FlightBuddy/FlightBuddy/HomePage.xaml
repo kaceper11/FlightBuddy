@@ -10,4 +10,5 @@
     <local:FlightsPage Title="Flights" Icon="icon_flights.png"/>
     <local:FriendsPage Title="Friends" Icon="icon_friends.png"/>
     <local:ProfilePage Title="Profile" Icon="icon_profile.png"/>
+
 </TabbedPage>

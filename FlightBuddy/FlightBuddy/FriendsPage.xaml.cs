@@ -16,14 +16,17 @@ namespace FlightBuddy
 		{
 			InitializeComponent ();
             db = new FlightBuddyContext.FlightBuddyContext();
-		}
+		    this.BindingContext = this;
+        }
 
 	    private readonly FlightBuddyContext.FlightBuddyContext db;
 
         protected  override async void OnAppearing()
         {
             base.OnAppearing();
+            this.IsBusy = true;
             friendsListView.ItemsSource = await this.db.GetUserFriends(App.User.Id);
+            this.IsBusy = false;
         }
 
         private async void UserFriend_Clicked(object sender, ItemTappedEventArgs e)

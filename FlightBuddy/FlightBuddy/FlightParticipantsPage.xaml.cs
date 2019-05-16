@@ -19,6 +19,7 @@ namespace FlightBuddy
 			InitializeComponent ();
 		    db = new FlightBuddyContext.FlightBuddyContext();
 		    this.FlightId = flightId;
+		    this.BindingContext = this;
 		}
 
         private readonly FlightBuddyContext.FlightBuddyContext db;
@@ -27,6 +28,8 @@ namespace FlightBuddy
 
         protected override async void OnAppearing()
         {
+            this.IsBusy = true;
+
             base.OnAppearing();
             var participants = await this.db.GetFlightParticipants(this.FlightId);
             if (participants != null)
@@ -38,7 +41,9 @@ namespace FlightBuddy
                 DependencyService.Get<IMessage>().LongAlert("There are no participants for this flight");
                 await Navigation.PopAsync();
             }
-            
+
+            this.IsBusy = false;
+
         }
 
         private async void OpenFlightParticipants_Clicked(object sender, ItemTappedEventArgs e)
