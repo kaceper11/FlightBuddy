@@ -5,18 +5,44 @@
              NavigationPage.HasNavigationBar="false">
 
     <Grid>
-        <ListView x:Name="flightsListView" ItemTapped="UserFlight_Clicked" RowHeight="160">
+        <ListView x:Name="flightsListView" ItemTapped="UserFlight_Clicked" RowHeight="100">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
                             <StackLayout>
-                                <Label Text="{Binding FlightNumber}" TextColor="{StaticResource blueColor}" />
-                                <Label Text="{Binding Airline}" TextColor="{StaticResource blueColor}" />
-                                <Label Text="{Binding Origin}" TextColor="{StaticResource blueColor}" />
-                                <Label Text="{Binding Destination}" TextColor="{StaticResource blueColor}" />
-                                <Label Text="{Binding LeaveTimeAirport}" TextColor="{StaticResource blueColor}" />
-                                <Label Text="{Binding ArrivalTimeAirport}" TextColor="{StaticResource blueColor}" />
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Flight number:  " FontAttributes="Bold"/>
+                                            <Span Text="{Binding FlightNumber}" FontSize="14" TextColor="{StaticResource blueColor}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Airline:  " FontAttributes="Bold"/>
+                                            <Span Text="{Binding Airline}" FontSize="14" TextColor="{StaticResource blueColor}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Route:  " FontAttributes="Bold"/>
+                                            <Span Text="{Binding Route}" FontSize="14" TextColor="{StaticResource blueColor}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Time:  " FontAttributes="Bold"/>
+                                            <Span Text="{Binding Time}" FontSize="14" TextColor="{StaticResource blueColor}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>

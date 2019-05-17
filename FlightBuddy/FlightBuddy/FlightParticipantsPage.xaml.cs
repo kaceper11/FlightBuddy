@@ -32,9 +32,9 @@ namespace FlightBuddy
 
             base.OnAppearing();
             var participants = await this.db.GetFlightParticipants(this.FlightId);
-            if (participants != null)
+            if (participants.Any())
             {
-                flightParticipantsListView.ItemsSource = await this.db.GetFlightParticipants(this.FlightId);
+                flightParticipantsListView.ItemsSource = participants;
             }
             else
             {

@@ -33,6 +33,10 @@
         <Button x:Name="registerUserButton"
                 Text="Register" HorizontalOptions="End"
                 Clicked="RegisterUserButton_Clicked"></Button>
+        
+        <Button x:Name="facebookLoginrButton"
+                Text="Login via Facebook" HorizontalOptions="End"
+                Clicked="LoginViaFacebookButton_Clicked"></Button>
     </StackLayout>
 
 </ContentPage>

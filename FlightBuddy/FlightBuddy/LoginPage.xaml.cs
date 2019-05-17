@@ -28,6 +28,8 @@ namespace FlightBuddy
 
         private User User { get; set; }
 
+        private bool Authenticated { get; set; } = false;
+
         private async void LoginButton_Clicked(object sender, EventArgs e)
         {            
             bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
@@ -64,6 +66,16 @@ namespace FlightBuddy
         private void RegisterUserButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new RegisterPage());
+        }
+
+        private async void LoginViaFacebookButton_Clicked(object sender, EventArgs e)
+        {
+            if (App.Authenticator != null)
+                this.Authenticated = await App.Authenticator.Authenticate();
+
+            // Set syncItems to true to synchronize the data on startup when offline is enabled.
+            if (this.Authenticated)
+                await Navigation.PushAsync(new HomePage());
         }
     }
 }

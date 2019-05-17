@@ -27,6 +27,10 @@ namespace FlightBuddy.Model
 
         public string Destination { get; set; }
 
+        public string Route { get; set; }
+
+        public string Time { get; set; }
+
         [JsonProperty(PropertyName = "leaveTimeAirport")]
         public DateTime LeaveTimeAirport { get; set; }
 

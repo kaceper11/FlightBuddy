@@ -56,6 +56,9 @@ namespace FlightBuddy.FlightSearchApi
                             flight.Destination = destination.Name;
                         }
 
+                        flight.Route = string.Concat(flight.Origin, " - ", flight.Destination);
+                        flight.Time = string.Concat(flight.LeaveTimeAirport.ToString("dd/MM/yyyy HH:mm"), " - ", flight.ArrivalTimeAirport.ToString("dd/MM/yyyy HH:mm"));
+
                     }
 
                     return listOfFlights;

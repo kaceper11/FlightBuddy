@@ -51,7 +51,7 @@ namespace FlightBuddy
 	        if (await this.db.CheckIfUserFlightExists(userFlight))
 	        {
 	            this.db.AddUserFlight(userFlight);
-	            await Navigation.PushAsync(new FlightsPage());
+	            await Navigation.PopModalAsync();	           	           
 	        }
 	        else
 	        {

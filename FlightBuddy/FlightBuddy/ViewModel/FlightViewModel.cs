@@ -6,6 +6,12 @@ namespace FlightBuddy.ViewModel
 {
     public class FlightViewModel
     {
+        public FlightViewModel()
+        {
+            Route = string.Concat(Origin, " - ", Destination);
+            Time = string.Concat(LeaveTimeAirport, " - ", ArrivalTimeAirport);
+        }
+
         public string Id { get; set; }
 
         public string FlightNumber { get; set; }
@@ -22,8 +28,12 @@ namespace FlightBuddy.ViewModel
 
         public string Destination { get; set; }
 
-        public DateTime LeaveTimeAirport { get; set; }
+        public string LeaveTimeAirport { get; set; }
 
-        public DateTime ArrivalTimeAirport { get; set; }
+        public string ArrivalTimeAirport { get; set; }
+
+        public string Route { get; set; }
+
+        public string Time { get; set; }
     }
 }
