@@ -33,6 +33,8 @@ namespace FlightBuddy.FlightSearchApi
                 if (flightRoot != null)
                 {
                     var listOfFlights = flightRoot.Flights.Select(d => d.Value).ToList();
+                    listOfFlights = listOfFlights
+                        .Where(f => f.OriginCode == airportCodeFrom && f.DestinationCode == airportCodeTo).ToList();
 
                     foreach (var flight in listOfFlights)
                     {
@@ -48,12 +50,12 @@ namespace FlightBuddy.FlightSearchApi
 
                         if (flightRoot.AirportDetails.TryGetValue(flight.OriginCode, out origin))
                         {
-                            flight.Origin = origin.Name;
+                            flight.Origin = string.Concat(origin.City, ", ", origin.Name);
                         }
 
                         if (flightRoot.AirportDetails.TryGetValue(flight.DestinationCode, out destination))
                         {
-                            flight.Destination = destination.Name;
+                            flight.Destination = string.Concat(destination.City, ", ", destination.Name);
                         }
 
                         flight.Route = string.Concat(flight.Origin, " - ", flight.Destination);

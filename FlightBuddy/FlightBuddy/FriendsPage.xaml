@@ -4,7 +4,7 @@
              x:Class="FlightBuddy.FriendsPage"
              NavigationPage.HasNavigationBar="false">
 <Grid>
-    <ListView x:Name="friendsListView" ItemTapped="UserFriend_Clicked" RowHeight="80">
+        <ListView x:Name="friendsListView" IsPullToRefreshEnabled="True"  Refreshing="friendsListView_Refreshing" ItemTapped="UserFriend_Clicked" RowHeight="80">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>

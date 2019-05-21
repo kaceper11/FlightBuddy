@@ -36,5 +36,10 @@ namespace FlightBuddy
         }
 
 
-    }
+	    private void friendsListView_Refreshing(object sender, EventArgs e)
+	    {
+	        this.OnAppearing();
+	        friendsListView.IsRefreshing = false;
+	    }
+	}
 }

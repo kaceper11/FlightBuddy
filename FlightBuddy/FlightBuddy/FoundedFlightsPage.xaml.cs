@@ -64,5 +64,11 @@ namespace FlightBuddy
 
 	        await Navigation.PushAsync(new MyNewFlightPage(itemTapped));
         }
+
+	    private void foundedFlightsListView_Refreshing(object sender, EventArgs e)
+	    {
+	        this.OnAppearing();
+	        foundedFlightsListView.IsRefreshing = false;
+        }
 	}
 }

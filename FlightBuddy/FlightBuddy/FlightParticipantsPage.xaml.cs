@@ -51,5 +51,11 @@ namespace FlightBuddy
             var itemTapped = e.Item as UserFriendViewModel;
             await Navigation.PushAsync(new FlightParticipantProfilePage(itemTapped.Id));
         }
-    }
+
+	    private void flightParticipantsListView_Refreshing(object sender, EventArgs e)
+	    {
+	        this.OnAppearing();
+	        flightParticipantsListView.IsRefreshing = false;
+	    }
+	}
 }

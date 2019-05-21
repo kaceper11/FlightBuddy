@@ -5,7 +5,7 @@
              NavigationPage.HasNavigationBar="false">
 
     <Grid>
-        <ListView x:Name="flightsListView" ItemTapped="UserFlight_Clicked" RowHeight="100">
+        <ListView x:Name="flightsListView" IsPullToRefreshEnabled="True"  Refreshing="flightsListView_Refreshing" ItemTapped="UserFlight_Clicked" RowHeight="105" SeparatorVisibility="Default" SeparatorColor="Black">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell >

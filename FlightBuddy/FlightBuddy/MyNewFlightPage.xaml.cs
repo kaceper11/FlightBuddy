@@ -30,12 +30,12 @@ namespace FlightBuddy
         protected override async void OnAppearing()
         {
             this.IsBusy = true;
-            this.FlightId = await this.db.GetFlightIdByDetails(this.Flight);
+            this.FlightId = await this.db.GetFlightIdByFlightNumber(this.Flight);
             flightNumber.Text = this.Flight.FlightNumber;
             flightOrigin.Text = this.Flight.Origin;
             flightDestination.Text = this.Flight.Destination;
-            flightArrivalTime.Text = this.Flight.ArriveTimeAirport.ToString("g");
-            flightLeaveTime.Text = this.Flight.LeaveTimeAirport.ToString("g");
+            flightArrivalTime.Text = this.Flight.ArriveTimeAirport.ToString("dd/MM/yyyy HH:mm");
+            flightLeaveTime.Text = this.Flight.LeaveTimeAirport.ToString("dd/MM/yyyy HH:mm");
             flightAirline.Text = this.Flight.Airline;
             this.IsBusy = false;
         }
@@ -51,8 +51,9 @@ namespace FlightBuddy
 	        if (await this.db.CheckIfUserFlightExists(userFlight))
 	        {
 	            this.db.AddUserFlight(userFlight);
-	            await Navigation.PopModalAsync();	           	           
-	        }
+	            await Navigation.PushAsync(new FlightParticipantsPage(this.FlightId));
+	            DependencyService.Get<IMessage>().LongAlert("Your flight has been added");
+            }
 	        else
 	        {
 	            DependencyService.Get<IMessage>().LongAlert("You have already added this flight to your flights");

@@ -4,7 +4,8 @@
              x:Class="FlightBuddy.FlightParticipantsPage" Title="Flight participants">
 
     <Grid>
-        <ListView x:Name="flightParticipantsListView" ItemTapped="OpenFlightParticipants_Clicked" RowHeight="80">
+        <ListView x:Name="flightParticipantsListView" ItemTapped="OpenFlightParticipants_Clicked" RowHeight="80" 
+                  IsPullToRefreshEnabled="True"  Refreshing="flightParticipantsListView_Refreshing">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
