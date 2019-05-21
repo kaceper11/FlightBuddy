@@ -34,8 +34,8 @@ namespace FlightBuddy.Model
         [JsonProperty(PropertyName = "leaveTimeAirport")]
         public DateTime LeaveTimeAirport { get; set; }
 
-        [JsonProperty(PropertyName = "arrivalTimeAirport")]
-        public DateTime ArrivalTimeAirport { get; set; }
+        [JsonProperty(PropertyName = "arriveTimeAirport")]
+        public DateTime ArriveTimeAirport { get; set; }
     }
 
     public class FlightResponse

@@ -34,7 +34,7 @@ namespace FlightBuddy
             flightNumber.Text = this.Flight.FlightNumber;
             flightOrigin.Text = this.Flight.Origin;
             flightDestination.Text = this.Flight.Destination;
-            flightArrivalTime.Text = this.Flight.ArrivalTimeAirport.ToString("g");
+            flightArrivalTime.Text = this.Flight.ArriveTimeAirport.ToString("g");
             flightLeaveTime.Text = this.Flight.LeaveTimeAirport.ToString("g");
             flightAirline.Text = this.Flight.Airline;
             this.IsBusy = false;

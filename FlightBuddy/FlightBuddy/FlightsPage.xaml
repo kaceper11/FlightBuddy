@@ -8,7 +8,7 @@
         <ListView x:Name="flightsListView" ItemTapped="UserFlight_Clicked" RowHeight="100">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell >
                         <ViewCell.View>
                             <StackLayout>
                                 <Label>

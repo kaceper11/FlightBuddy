@@ -73,13 +73,13 @@ namespace FlightBuddy.FlightBuddyContext
                        Destination = flight.Destination,
                        Origin = flight.Origin,
                        Airline = flight.Airline,
-                       ArrivalTimeAirport = flight.ArrivalTimeAirport.ToString("g"),
+                       ArrivalTimeAirport = flight.ArriveTimeAirport.ToString("g"),
                        DestinationCode = flight.DestinationCode,
                        FlightNumber = flight.FlightNumber,
                        LeaveTimeAirport = flight.LeaveTimeAirport.ToString("g"),
                        OriginCode = flight.OriginCode,
                        Route = string.Concat(flight.Origin, " - ", flight.Destination),
-                       Time = string.Concat(flight.LeaveTimeAirport.ToString("dd/MM/yyyy HH:mm"), " - ", flight.ArrivalTimeAirport.ToString("dd/MM/yyyy HH:mm"))
+                       Time = string.Concat(flight.LeaveTimeAirport.ToString("dd/MM/yyyy HH:mm"), " - ", flight.ArriveTimeAirport.ToString("dd/MM/yyyy HH:mm"))
                    };
         }
 
