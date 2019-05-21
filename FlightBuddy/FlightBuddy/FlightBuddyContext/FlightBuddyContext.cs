@@ -83,15 +83,40 @@ namespace FlightBuddy.FlightBuddyContext
                    };
         }
 
+        public async Task<IEnumerable<string>> GetUserFriendsHelper(string userId)
+        {
+            var userFriends = (from user in (await this.Users.ToListAsync())
+                join userFriend in (await this.UserFriends.ToListAsync()) on user.Id equals userFriend.UserId
+                where user.Id == userId
+                select userFriend.FriendId).ToList();
+
+            return from user in (await this.Users.ToListAsync())
+                where userFriends.Contains(user.Id)
+                select user.Id;
+
+        }
+
         public async Task<IEnumerable<UserFriendViewModel>> GetUserFriends(string userId)
         {
+            var friendsToReturn = new List<string>();
+
             var userFriends = (from user in (await this.Users.ToListAsync())
                                join userFriend in (await this.UserFriends.ToListAsync()) on user.Id equals userFriend.UserId
                 where user.Id == userId
                 select userFriend.FriendId).ToList();
 
+            foreach (var friendId in userFriends)
+            {
+                var friendFriends = await this.GetUserFriendsHelper(friendId);
+                if (friendFriends.Any(u => u == userId))
+                {
+                    friendsToReturn.Add(friendId);
+                }
+
+            }
+
             return from user in (await this.Users.ToListAsync())
-                   where userFriends.Contains(user.Id)
+                   where friendsToReturn.Contains(user.Id)
                    select new UserFriendViewModel()
                     {
                         Id = user.Id,
