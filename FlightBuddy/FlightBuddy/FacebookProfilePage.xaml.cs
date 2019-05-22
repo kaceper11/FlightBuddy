@@ -67,13 +67,13 @@ namespace FlightBuddy
                     if (userToBeAdded != null)
                     {
                         App.User = userToBeAdded;
-                        await Navigation.PushAsync(new HomePage(true));
+                        await Navigation.PushAsync(new HomePage());
                     }
                     else
                     {
                         this.db.AddUser(userDb);
                         App.User = userDb;
-                        await Navigation.PushAsync(new HomePage(true));
+                        await Navigation.PushAsync(new HomePage());
                     }
                 }
             }
