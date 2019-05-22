@@ -11,28 +11,14 @@ namespace FlightBuddy
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class HomePage : TabbedPage
 	{
-		public HomePage (bool displayAlert = false)
+		public HomePage ()
 		{
 			InitializeComponent ();
 		    localDb = new LocalDb.LocalDb();
             this.AddToLocalDb();
-		    this.displayAlert = displayAlert;
-
         }
 
 	    private readonly LocalDb.LocalDb localDb;
-
-	    private bool displayAlert;
-
-	    protected override void OnAppearing()
-	    {
-	        base.OnAppearing();
-	        if (this.displayAlert)
-	        {
-	            DisplayAlert("Warning", "Your password has been defaulted to your email address, " +
-	                                    "change password immediately", "Ok");
-	        }
-        }
 
 	    private void AddToLocalDb()
 	    {
