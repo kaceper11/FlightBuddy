@@ -30,13 +30,26 @@ namespace FlightBuddy
         protected override async void OnAppearing()
         {
             this.IsBusy = true;
-            this.FlightId = await this.db.GetFlightIdByFlightNumber(this.Flight);
-            flightNumber.Text = this.Flight.FlightNumber;
-            flightOrigin.Text = this.Flight.Origin;
-            flightDestination.Text = this.Flight.Destination;
-            flightArrivalTime.Text = this.Flight.ArriveTimeAirport.ToString("dd/MM/yyyy HH:mm");
-            flightLeaveTime.Text = this.Flight.LeaveTimeAirport.ToString("dd/MM/yyyy HH:mm");
-            flightAirline.Text = this.Flight.Airline;
+            if (App.CheckConnectvity())
+            {
+                this.FlightId = await this.db.GetFlightIdByFlightNumber(this.Flight);
+                flightNumber.Text = this.Flight.FlightNumber;
+                flightOrigin.Text = this.Flight.Origin;
+                flightDestination.Text = this.Flight.Destination;
+                flightArrivalTime.Text = this.Flight.ArriveTimeAirport.ToString("dd/MM/yyyy HH:mm");
+                flightLeaveTime.Text = this.Flight.LeaveTimeAirport.ToString("dd/MM/yyyy HH:mm");
+                flightAirline.Text = this.Flight.Airline;
+            }
+            else
+            {
+                flightNumber.Text = string.Empty;
+                flightOrigin.Text = string.Empty;
+                flightDestination.Text = string.Empty;
+                flightArrivalTime.Text = string.Empty;
+                flightLeaveTime.Text = string.Empty;
+                flightAirline.Text = string.Empty;
+            }
+
             this.IsBusy = false;
         }
 

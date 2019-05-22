@@ -16,6 +16,8 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\PInvoke.Kernel32.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\PInvoke.NCrypt.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\PInvoke.Windows.Core.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Plugin.Connectivity.Abstractions.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Plugin.Connectivity.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Plugin.CurrentActivity.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Plugin.Media.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Plugin.Messaging.Abstractions.dll

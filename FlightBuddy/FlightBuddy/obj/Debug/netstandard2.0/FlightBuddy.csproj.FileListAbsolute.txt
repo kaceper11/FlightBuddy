@@ -23,8 +23,8 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netsta
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.csproj.CoreCompileInputs.cache
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.AssemblyInfoInputs.cache
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.AssemblyInfo.cs
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.csproj.CopyComplete
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.csprojAssemblyReference.cache
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\XamlC.stamp

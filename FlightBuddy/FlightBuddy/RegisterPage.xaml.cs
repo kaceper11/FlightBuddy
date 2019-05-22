@@ -33,46 +33,49 @@ namespace FlightBuddy
             bool isNameEmpty = string.IsNullOrEmpty(nameEntry.Text);	        
 	        bool isMobileEmpty = string.IsNullOrEmpty(mobileNumberEntry.Text);
 
-	        if (!isEmailEmpty && !isPasswordEmpty && !isConfirmPasswordEmpty && !isNameEmpty && !isMobileEmpty)
+	        if (App.CheckConnectvity())
 	        {
-	            if (passwordEntry.Text == confirmPasswordEntry.Text)
+	            if (!isEmailEmpty && !isPasswordEmpty && !isConfirmPasswordEmpty && !isNameEmpty && !isMobileEmpty)
 	            {
-	                if (IsPhoneNumber(mobileNumberEntry.Text) && IsValidEmail(emailEntry.Text))
+	                if (passwordEntry.Text == confirmPasswordEntry.Text)
 	                {
-	                    var user = new User()
+	                    if (IsPhoneNumber(mobileNumberEntry.Text) && IsValidEmail(emailEntry.Text))
 	                    {
-	                        Email = emailEntry.Text,
-	                        Password = passwordEntry.Text,
-	                        Name = nameEntry.Text,
-	                        MobileNumber = mobileNumberEntry.Text,
-	                    };
+	                        var user = new User()
+	                        {
+	                            Email = emailEntry.Text,
+	                            Password = passwordEntry.Text,
+	                            Name = nameEntry.Text,
+	                            MobileNumber = mobileNumberEntry.Text,
+	                        };
 
-	                    var userDb = await this.db.GetUserByEmail(emailEntry.Text);
+	                        var userDb = await this.db.GetUserByEmail(emailEntry.Text);
 
-	                    if (userDb != null)
-	                    {
-	                        DependencyService.Get<IMessage>().LongAlert("User with that email already exists");
+	                        if (userDb != null)
+	                        {
+	                            DependencyService.Get<IMessage>().LongAlert("User with that email already exists");
+	                        }
+	                        else
+	                        {
+	                            this.db.AddUser(user);
+	                            App.User = user;
+	                            await Navigation.PushAsync(new HomePage());
+	                        }
 	                    }
 	                    else
 	                    {
-	                        this.db.AddUser(user);
-	                        App.User = user;
-	                        await Navigation.PushAsync(new HomePage());
+	                        DependencyService.Get<IMessage>().LongAlert("Mobile number or email address are not valid");
 	                    }
 	                }
 	                else
 	                {
-	                    DependencyService.Get<IMessage>().LongAlert("Mobile number or email address are not valid");
-                    }
+	                    DependencyService.Get<IMessage>().LongAlert("Passwords don't match");
+	                }
 	            }
 	            else
 	            {
-	                DependencyService.Get<IMessage>().LongAlert("Passwords don't match");
-                }
-            }
-	        else
-	        {
-	            DependencyService.Get<IMessage>().LongAlert("Fields can't be empty");
+	                DependencyService.Get<IMessage>().LongAlert("Fields can't be empty");
+	            }
             }
 
 	    }

@@ -12,6 +12,8 @@ PInvoke.BCrypt
 PInvoke.Kernel32
 PInvoke.NCrypt
 PInvoke.Windows.Core
+Plugin.Connectivity.Abstractions
+Plugin.Connectivity
 Plugin.CurrentActivity
 Plugin.Media
 Plugin.Messaging.Abstractions

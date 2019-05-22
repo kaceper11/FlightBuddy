@@ -37,22 +37,44 @@
 
                 <Label Font="Bold,15"
                        Text="Common flights"/>
-                <ListView x:Name="commonFlightsListView"  RowHeight="160" Margin="15, 20, 15, 0">
+                <ListView x:Name="commonFlightsListView"  RowHeight="105" Margin="15, 20, 15, 0" SeparatorVisibility="Default" SeparatorColor="Black">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <ViewCell.View>
                                     <StackLayout>
-                                        <Label Text="{Binding FlightNumber}" TextColor="{StaticResource blueColor}" />
-                                        <Label Text="{Binding Airline}" TextColor="{StaticResource blueColor}" />
-                                        <Label Text="{Binding Origin}" TextColor="{StaticResource blueColor}" />
-                                        <Label Text="{Binding Destination}" TextColor="{StaticResource blueColor}" />
-                                        <Label Text="{Binding LeaveTimeAirport}" TextColor="{StaticResource blueColor}" />
-                                        <Label Text="{Binding ArrivalTimeAirport}" TextColor="{StaticResource blueColor}" />
-
-                                        <Label Text="{Binding AirlineCode}" IsVisible="false" TextColor="{StaticResource blueColor}" />
-                                        <Label Text="{Binding OriginCode}" IsVisible="false" TextColor="{StaticResource blueColor}" />
-                                        <Label Text="{Binding DestinationCode}" IsVisible="false" TextColor="{StaticResource blueColor}" />
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Flight number:  " FontAttributes="Bold"/>
+                                                    <Span Text="{Binding FlightNumber}" FontSize="14" TextColor="{StaticResource blueColor}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Airline:  " FontAttributes="Bold"/>
+                                                    <Span Text="{Binding Airline}" FontSize="14" TextColor="{StaticResource blueColor}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Route:  " FontAttributes="Bold"/>
+                                                    <Span Text="{Binding Route}" FontSize="14" TextColor="{StaticResource blueColor}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Time:  " FontAttributes="Bold"/>
+                                                    <Span Text="{Binding Time}" FontSize="14" TextColor="{StaticResource blueColor}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
                                     </StackLayout>
                                 </ViewCell.View>
                             </ViewCell>

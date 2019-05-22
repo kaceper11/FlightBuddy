@@ -31,15 +31,26 @@ namespace FlightBuddy
         {
             this.IsBusy = true;
             base.OnAppearing();
-            
-            this.SetUserProfilePicture(this.UserFriendId);
-            var userFriend = await db.GetUserById(this.UserFriendId);
-            userFriendName.Text = userFriend.Name;
-            userFriendEmail.Text = userFriend.Email;
-            userFriendMobileNumber.Text = userFriend.MobileNumber;
-            userFriendBio.Text = userFriend.Bio;
-            this.UserFriend = userFriend;
-            commonFlightsListView.ItemsSource = await this.db.GetCommonFlights(App.User.Id, userFriend.Id);
+
+            if (App.CheckConnectvity())
+            {
+                this.SetUserProfilePicture(this.UserFriendId);
+                var userFriend = await db.GetUserById(this.UserFriendId);
+                userFriendName.Text = userFriend.Name;
+                userFriendEmail.Text = userFriend.Email;
+                userFriendMobileNumber.Text = userFriend.MobileNumber;
+                userFriendBio.Text = userFriend.Bio;
+                this.UserFriend = userFriend;
+                commonFlightsListView.ItemsSource = await this.db.GetCommonFlights(App.User.Id, userFriend.Id);
+            }
+            else
+            {
+                userFriendName.Text = string.Empty;
+                userFriendEmail.Text = string.Empty;
+                userFriendMobileNumber.Text = string.Empty;
+                userFriendBio.Text = string.Empty;
+                commonFlightsListView.ItemsSource = null;
+            }
 
             this.IsBusy = false;
         }

@@ -46,11 +46,22 @@ namespace FlightBuddy
 
 	    private async void SetUserProfileData()
 	    {
-	        var currentUser = await this.db.GetUserById(App.User.Id);
-	        nameEntry.Text = currentUser.Name;
-	        emailEntry.Text = currentUser.Email;
-	        mobileNumberEntry.Text = currentUser.MobileNumber;
-	        bioEntry.Text = currentUser.Bio ?? string.Empty;
+	        if (App.CheckConnectvity())
+	        {
+	            var currentUser = await this.db.GetUserById(App.User.Id);
+	            nameEntry.Text = currentUser.Name;
+	            emailEntry.Text = currentUser.Email;
+	            mobileNumberEntry.Text = currentUser.MobileNumber;
+	            bioEntry.Text = currentUser.Bio ?? string.Empty;
+	        }
+	        else
+	        {
+	            nameEntry.Text = string.Empty;
+	            emailEntry.Text = string.Empty;
+                mobileNumberEntry.Text = string.Empty;
+                bioEntry.Text = string.Empty;
+            }
+
 	    }
 	}
 }

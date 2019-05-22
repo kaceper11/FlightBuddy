@@ -4,6 +4,8 @@
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
   <uses-feature android:name="android.hardware.camera" android:required="false" />
   <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
   <application android:label="FlightBuddy.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
@@ -20,6 +22,7 @@
     <activity android:label="Web Authenticator" android:name="md5b35075ec980064f2973fda331128de90.WebAuthenticatorActivity" />
     <activity android:label="Web Authenticator Native Browser" android:launchMode="singleTop" android:name="md5b35075ec980064f2973fda331128de90.WebAuthenticatorNativeBrowserActivity" />
     <activity android:name="com.microsoft.windowsazure.mobileservices.authentication.RedirectUrlActivity" />
+    <receiver android:enabled="true" android:exported="false" android:label="Connectivity Plugin Broadcast Receiver" android:name="md59628c2715c1bb8febcc7ae8402df0582.ConnectivityChangeBroadcastReceiver" />
     <activity android:configChanges="orientation|screenSize" android:name="md54cd65ac53ae710bff80022afc423e0f3.MediaPickerActivity" />
     <service android:name="md5dcb6eccdc824e0677ffae8ccdde42930.KeepAliveService" />
     <receiver android:enabled="true" android:exported="false" android:name="md51558244f76c53b6aeda52c8a337f2c37.PowerSaveModeBroadcastReceiver" />

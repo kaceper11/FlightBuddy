@@ -31,15 +31,22 @@ namespace FlightBuddy
             this.IsBusy = true;
 
             base.OnAppearing();
-            var participants = await this.db.GetFlightParticipants(this.FlightId);
-            if (participants.Any())
+            if (App.CheckConnectvity())
             {
-                flightParticipantsListView.ItemsSource = participants;
+                var participants = await this.db.GetFlightParticipants(this.FlightId);
+                if (participants.Any())
+                {
+                    flightParticipantsListView.ItemsSource = participants;
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert("There are no participants for this flight");
+                    await Navigation.PopAsync();
+                }
             }
             else
             {
-                DependencyService.Get<IMessage>().LongAlert("There are no participants for this flight");
-                await Navigation.PopAsync();
+                flightParticipantsListView.ItemsSource = null;
             }
 
             this.IsBusy = false;

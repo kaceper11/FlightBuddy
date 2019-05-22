@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using FlightBuddy.Model;
+using FlightBuddy.ToastNotification;
 using Microsoft.WindowsAzure.MobileServices;
+using Plugin.Connectivity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -72,6 +74,22 @@ namespace FlightBuddy
             }
 
             return true;
+        }
+
+        public static bool CheckConnectvity()
+        {
+
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                return true;
+            }
+            else
+            {
+                DependencyService.Get<IMessage>().LongAlert("No internet connection");
+                return false;
+            }
+
+           
         }
 
         protected  override void OnStart()

@@ -26,7 +26,16 @@ namespace FlightBuddy
 	    {
             base.OnAppearing();
 	        this.IsBusy = true;
-	        flightsListView.ItemsSource = await this.db.GetUserFlights(App.User.Id);
+	        if (App.CheckConnectvity())
+	        {
+	            flightsListView.ItemsSource = await this.db.GetUserFlights(App.User.Id);
+	        }
+	        else
+	        {
+	            flightsListView.ItemsSource = null;
+
+	        }
+	        
 	        this.IsBusy = false;
 	    }
 

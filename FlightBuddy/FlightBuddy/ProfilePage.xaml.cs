@@ -31,12 +31,23 @@ namespace FlightBuddy
 	    {
 	        base.OnAppearing();
 	        this.IsBusy = true;
-	        var user = await this.db.GetUserById(App.User.Id);
-	        userEmail.Text = user.Email;
-	        userMobileNumber.Text = user.MobileNumber;
-	        userName.Text = user.Name;
-	        userBio.Text = user.Bio;
-	        SetUserProfilePicture();
+	        if (App.CheckConnectvity())
+	        {
+	            var user = await this.db.GetUserById(App.User.Id);
+	            userEmail.Text = user.Email;
+	            userMobileNumber.Text = user.MobileNumber;
+	            userName.Text = user.Name;
+	            userBio.Text = user.Bio;
+	            SetUserProfilePicture();
+	        }
+	        else
+	        {
+	            userEmail.Text = string.Empty;
+	            userMobileNumber.Text = string.Empty;
+                userName.Text = string.Empty;
+                userBio.Text = string.Empty;
+            }
+
 	        this.IsBusy = false;
 	    }
 

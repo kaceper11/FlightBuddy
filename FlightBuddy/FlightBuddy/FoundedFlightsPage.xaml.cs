@@ -39,15 +39,22 @@ namespace FlightBuddy
         protected override async void OnAppearing()
         {
             this.IsBusy = true;
-            var result = await flightsApi.GetFlights(this.OriginCode, this.DestinationCode, this.Date);
-	        if (result.Any())
-	        {
-	            foundedFlightsListView.ItemsSource = result;
-	        }
-	        else
-	        {
-	            await Navigation.PopAsync();
-	            DependencyService.Get<IMessage>().LongAlert("No flights were found for given parameters");
+            if (App.CheckConnectvity())
+            {
+                var result = await flightsApi.GetFlights(this.OriginCode, this.DestinationCode, this.Date);
+	            if (result.Any())
+	            {
+	                foundedFlightsListView.ItemsSource = result;
+	            }
+	            else
+	            {
+	                await Navigation.PopAsync();
+	                DependencyService.Get<IMessage>().LongAlert("No flights were found for given parameters");
+                }
+            }
+            else
+            {
+                await Navigation.PopAsync();
             }
 
             this.IsBusy = false;

@@ -31,21 +31,26 @@ namespace FlightBuddy
 
         private async void SearchButton_Clicked(object sender, EventArgs e)
         {
-            var flight = localDb.GetFlight();
-            var isFlightOriginCodeEmpty = !string.IsNullOrEmpty(flight.OriginCode);
-            var isFlightDestinationCodeEmpty = !string.IsNullOrEmpty(flight.DestinationCode);
+            if (App.CheckConnectvity())
+            {
+                var flight = localDb.GetFlight();
+                if (flight?.DestinationCode != null && flight?.OriginCode != null)
+                {
+                    var isFlightOriginCodeEmpty = !string.IsNullOrEmpty(flight.OriginCode);
+                    var isFlightDestinationCodeEmpty = !string.IsNullOrEmpty(flight.DestinationCode);
 
-            if (isFlightOriginCodeEmpty && isFlightDestinationCodeEmpty)
-            {
-                await Navigation.PushAsync(new FoundedFlightsPage(flight.OriginCode, flight.DestinationCode,
-	            datePicker.Date.ToString("yyyy-MM-dd")));
+                    if (isFlightOriginCodeEmpty && isFlightDestinationCodeEmpty)
+                    {
+                        await Navigation.PushAsync(new FoundedFlightsPage(flight.OriginCode, flight.DestinationCode,
+                            datePicker.Date.ToString("yyyy-MM-dd")));
+                    }
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert("Search parameters can't be empty");
+                }
             }
-            else
-            {
-                DependencyService.Get<IMessage>().LongAlert("Search parameters can't be empty");
-            }
-            
-	    }
+        }
 
 	    private async void OpenOriginAiportSearch(object sender, EventArgs e)
 	    {

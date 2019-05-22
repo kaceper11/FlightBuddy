@@ -20,8 +20,7 @@ namespace FlightBuddy
 			InitializeComponent ();
 		    localDb = new LocalDb.LocalDb();
             airportsApi = new AirportsApi();
-		    this.BindingContext = this;
-		    originAirportSearch.Focus();
+		    this.BindingContext = this;		    
         }
 
 	    private readonly IAirportsApi airportsApi;
@@ -30,13 +29,22 @@ namespace FlightBuddy
 
         private IEnumerable<Model.Airport> Airports { get; set; }
 
-	    protected override void OnAppearing()
+	    protected override async void OnAppearing()
 	    {
 	        this.IsBusy = true;
 
-	        this.GetListOfAirports();
+	        if (App.CheckConnectvity())
+	        {
+	            this.GetListOfAirports();
+	        }
+	        else
+	        {
+	            this.Airports = null;
+	        }
+	        
+	        originAirportSearch.Focus();
 
-	        this.IsBusy = false;
+            this.IsBusy = false;
 	    }
 
         private async void GetListOfAirports()

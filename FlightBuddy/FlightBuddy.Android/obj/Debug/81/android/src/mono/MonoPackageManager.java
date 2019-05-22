@@ -121,6 +121,8 @@ class MonoPackageManager_Resources {
 		"PInvoke.Kernel32.dll",
 		"PInvoke.NCrypt.dll",
 		"PInvoke.Windows.Core.dll",
+		"Plugin.Connectivity.Abstractions.dll",
+		"Plugin.Connectivity.dll",
 		"Plugin.CurrentActivity.dll",
 		"Plugin.Media.dll",
 		"Plugin.Messaging.Abstractions.dll",

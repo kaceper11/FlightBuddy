@@ -28,10 +28,20 @@ namespace FlightBuddy
 	    {
 	        this.IsBusy = true;
 	        base.OnAppearing();
-	        var userFriend = await this.db.GetUserById(this.UserFriendId);
-	        flightParticipantName.Text = userFriend.Name;
-	        flightParticipantBio.Text = userFriend.Bio;
-	        profileImage.Source = userFriend.ProfilePictureUrl;
+	        if (App.CheckConnectvity())
+	        {
+	            var userFriend = await this.db.GetUserById(this.UserFriendId);
+	            flightParticipantName.Text = userFriend.Name;
+	            flightParticipantBio.Text = userFriend.Bio;
+	            profileImage.Source = userFriend.ProfilePictureUrl;
+	        }
+	        else
+	        {
+	            flightParticipantName.Text = string.Empty;
+	            flightParticipantBio.Text = string.Empty;
+                profileImage.Source = string.Empty;
+            }
+
 	        this.IsBusy = false;
 	    }
 
