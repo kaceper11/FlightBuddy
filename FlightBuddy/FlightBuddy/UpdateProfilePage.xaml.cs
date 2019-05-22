@@ -23,15 +23,19 @@ namespace FlightBuddy
 
 	    private async void UpdateProfile_Clicked(object sender, EventArgs e)
 	    {
-	        App.User.Email = emailEntry.Text;
-	        App.User.Name = nameEntry.Text;
-	        App.User.Email = emailEntry.Text;
-	        App.User.MobileNumber = mobileNumberEntry.Text;
-	        App.User.Bio = bioEntry.Text;
+	        if (App.CheckConnectvity())
+	        {
+	            App.User.Email = emailEntry.Text;
+	            App.User.Name = nameEntry.Text;
+	            App.User.Email = emailEntry.Text;
+	            App.User.MobileNumber = mobileNumberEntry.Text;
+	            App.User.Bio = bioEntry.Text;
 
-            this.db.UpdateUser(App.User);
-	        await Navigation.PopAsync();
-            DependencyService.Get<IMessage>().LongAlert("Profile has been updated");
+                this.db.UpdateUser(App.User);
+	            await Navigation.PopAsync();
+                DependencyService.Get<IMessage>().LongAlert("Profile has been updated");
+	        }
+
 	    }
 
         protected override void OnAppearing()

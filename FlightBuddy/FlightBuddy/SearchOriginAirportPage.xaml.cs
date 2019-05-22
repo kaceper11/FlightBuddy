@@ -29,7 +29,7 @@ namespace FlightBuddy
 
         private IEnumerable<Model.Airport> Airports { get; set; }
 
-	    protected override async void OnAppearing()
+	    protected override void OnAppearing()
 	    {
 	        this.IsBusy = true;
 
@@ -54,9 +54,13 @@ namespace FlightBuddy
 
 	    private void SearchAirports_TextChanged(object sender, EventArgs e)
 	    {
-	        var keyword = originAirportSearch.Text;
-	        var suggestions = this.Airports.Where(a => a.Name.ToLower().Contains(keyword.ToLower()));
-            airportSuggestions.ItemsSource = suggestions;
+	        if (this.Airports != null)
+	        {
+	            var keyword = originAirportSearch.Text;
+	            var suggestions = this.Airports.Where(a => a.Name.ToLower().Contains(keyword.ToLower()));
+                airportSuggestions.ItemsSource = suggestions;
+	        }
+
 	    }
 
 	    private async void SetOriginAirport(object sender, ItemTappedEventArgs e)
