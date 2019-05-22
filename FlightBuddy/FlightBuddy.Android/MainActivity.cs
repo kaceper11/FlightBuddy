@@ -19,7 +19,7 @@ using Environment = System.Environment;
 namespace FlightBuddy.Droid
 {
     [Activity(Label = "FlightBuddy", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IAuthenticate
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -37,8 +37,6 @@ namespace FlightBuddy.Droid
 
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
-            App.Init((IAuthenticate)this);
-
             LoadApplication(new App(fullPath));
         }
 
@@ -50,51 +48,5 @@ namespace FlightBuddy.Droid
 
         private MobileServiceUser User { get; set; }
 
-        public async Task<bool> AuthenticateAsync()
-        {
-            bool success = false;
-            try
-            {
-                if (User == null)
-                {
-                    
-                    // The authentication provider could also be Facebook, Twitter, or Microsoft
-                    User = await App.MobileService.LoginAsync(this, MobileServiceAuthenticationProvider.Facebook, Constants.URLScheme);
-                    if (User != null)
-                    {
-
-                        DependencyService.Get<IMessage>().LongAlert("You are now logged in via Facebook");
-                    }
-                }
-                success = true;
-            }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert($"{ex}, Authentication failed");
-            }
-            return success;
-        }
-
-        public async Task<bool> LogoutAsync()
-        {
-            bool success = false;
-            try
-            {
-                if (User != null)
-                {
-                    CookieManager.Instance.RemoveAllCookie();
-                    await App.MobileService.LogoutAsync();
-                    
-                }
-                User = null;
-                success = true;
-            }
-            catch (Exception ex)
-            {
-                DependencyService.Get<IMessage>().LongAlert($"{ex}, Logout failed");
-            }
-
-            return success;
-        }
     }
 }

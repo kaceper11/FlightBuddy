@@ -28,14 +28,7 @@ namespace FlightBuddy
         {
             InitializeComponent();
             MainPage = new NavigationPage(new LoginPage());
-        }
-     
-        public static IAuthenticate Authenticator { get; private set; }
-
-        public static void Init(IAuthenticate authenticator)
-        {
-            Authenticator = authenticator;
-        }
+        }   
 
         public App(string databaseLocation)
         {

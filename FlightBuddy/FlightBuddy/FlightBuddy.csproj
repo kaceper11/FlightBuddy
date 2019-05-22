@@ -50,6 +50,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="FacebookProfilePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="FlightParticipantProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

@@ -33,6 +33,7 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.IdentityModel.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.IO.Compression.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.Json.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.Net.Http.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.Runtime.Serialization.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.Xml.dll
@@ -58,6 +59,7 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Android.Support.v7.Palette.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Android.Support.v7.RecyclerView.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Android.Support.Vector.Drawable.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Auth.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.dll

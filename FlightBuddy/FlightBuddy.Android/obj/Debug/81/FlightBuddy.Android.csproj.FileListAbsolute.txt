@@ -70,6 +70,8 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\Microsoft.WindowsAzure.Storage.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\Plugin.Messaging.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\Plugin.Connectivity.Abstractions.pdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\Plugin.Connectivity.dll.mdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\System.Json.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\FlightBuddy.Android.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\FFImageLoading.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\FFImageLoading.Forms.pdb
@@ -84,6 +86,7 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.IdentityModel.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.IO.Compression.pdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.Json.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.Net.Http.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.Runtime.Serialization.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.Xml.pdb
@@ -99,7 +102,6 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.Web.Services.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Mono.Security.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\System.ServiceModel.Internals.pdb
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\Plugin.Connectivity.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\FlightBuddy.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Microsoft.WindowsAzure.Storage.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Plugin.Connectivity.dll.mdb
@@ -125,6 +127,7 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.IdentityModel.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.IO.Compression.FileSystem.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.IO.Compression.pdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.Json.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.Net.Http.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.Numerics.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\System.pdb
@@ -137,6 +140,8 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debu
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\bin\Debug\netstandard2.0\FlightBuddy.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\bin\Debug\FlightBuddy.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\FlightBuddy.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Microsoft.WindowsAzure.Storage.dll.mdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy.Android\obj\Debug\81\linksrc\Plugin.Connectivity.dll.mdb

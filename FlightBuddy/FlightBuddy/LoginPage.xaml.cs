@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using FlightBuddy.Auth;
 using FlightBuddy.Model;
 using FlightBuddy.ToastNotification;
 using Microsoft.WindowsAzure.MobileServices;
+using Newtonsoft.Json;
 using Plugin.Connectivity;
 using Xamarin.Forms;
+using Device = Xamarin.Forms.Device;
 
 namespace FlightBuddy
 {
@@ -21,15 +25,12 @@ namespace FlightBuddy
 
             var assembly = typeof(LoginPage);
             iconImage.Source = ImageSource.FromResource("FlightBuddy.Assets.Images.app_icon.png", assembly);
+
         }
 
         private readonly FlightBuddyContext.FlightBuddyContext db;
 
         private readonly LocalDb.LocalDb localDb;
-
-        private User User { get; set; }
-
-        private bool Authenticated { get; set; } = false;
 
         private async void LoginButton_Clicked(object sender, EventArgs e)
         {            
@@ -74,20 +75,7 @@ namespace FlightBuddy
 
         private async void LoginViaFacebookButton_Clicked(object sender, EventArgs e)
         {
-            if (App.Authenticator != null)
-            {
-                this.Authenticated = await App.Authenticator.AuthenticateAsync();
-            }
-                
-
-            if (this.Authenticated)
-            {
-                Application.Current.MainPage = new HomePage();
-            }
-            else
-            {
-                DependencyService.Get<IMessage>().LongAlert("Authentication via Facebook failed");
-            }
+            await Navigation.PushAsync(new FacebookProfilePage());
         }
     }
 }
