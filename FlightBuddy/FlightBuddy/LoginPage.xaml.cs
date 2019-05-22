@@ -75,11 +75,19 @@ namespace FlightBuddy
         private async void LoginViaFacebookButton_Clicked(object sender, EventArgs e)
         {
             if (App.Authenticator != null)
-                this.Authenticated = await App.Authenticator.Authenticate();
+            {
+                this.Authenticated = await App.Authenticator.AuthenticateAsync();
+            }
+                
 
-            // Set syncItems to true to synchronize the data on startup when offline is enabled.
             if (this.Authenticated)
-                await Navigation.PushAsync(new HomePage());
+            {
+                Application.Current.MainPage = new HomePage();
+            }
+            else
+            {
+                DependencyService.Get<IMessage>().LongAlert("Authentication via Facebook failed");
+            }
         }
     }
 }

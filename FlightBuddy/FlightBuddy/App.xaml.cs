@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using FlightBuddy.Auth;
 using FlightBuddy.Model;
 using FlightBuddy.ToastNotification;
 using Microsoft.WindowsAzure.MobileServices;
@@ -27,11 +28,6 @@ namespace FlightBuddy
         {
             InitializeComponent();
             MainPage = new NavigationPage(new LoginPage());
-        }
-
-        public interface IAuthenticate
-        {
-            Task<bool> Authenticate();
         }
      
         public static IAuthenticate Authenticator { get; private set; }

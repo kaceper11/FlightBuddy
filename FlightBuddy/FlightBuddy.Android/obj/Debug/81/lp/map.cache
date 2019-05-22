@@ -69,3 +69,4 @@ System.IO.FileSystem
 System.Security.Cryptography.Primitives
 System.Text.Encoding
 System.Threading.Timer
+Xamarin.Auth

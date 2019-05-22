@@ -9,13 +9,17 @@ using Android.Widget;
 using Android.OS;
 using System.IO;
 using System.Net;
+using Android.Webkit;
+using FlightBuddy.Auth;
+using FlightBuddy.ToastNotification;
 using Plugin.CurrentActivity;
+using Xamarin.Forms;
 using Environment = System.Environment;
 
 namespace FlightBuddy.Droid
 {
     [Activity(Label = "FlightBuddy", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity //, App.IAuthenticate
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IAuthenticate
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,7 +37,7 @@ namespace FlightBuddy.Droid
 
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
-            //App.Init((App.IAuthenticate)this);
+            App.Init((IAuthenticate)this);
 
             LoadApplication(new App(fullPath));
         }
@@ -46,35 +50,51 @@ namespace FlightBuddy.Droid
 
         private MobileServiceUser User { get; set; }
 
-        //public async Task<bool> Authenticate()
-        //{
-        //    var success = false;
-        //    var message = string.Empty;
-        //    try
-        //    {
-        //        var xd = App.Authenticator.Authenticate()
-        //        // Sign in with Facebook login using a server-managed flow.
-        //        this.User = await TodoItemManager.DefaultManager.CurrentClient.LoginAsync(this,
-        //            MobileServiceAuthenticationProvider.Facebook, "https://flightbuddy.azurewebsites.net");
-        //        if (this.User != null)
-        //        {
-        //            message = string.Format("you are now signed-in as {0}.",
-        //                this.User.UserId);
-        //            success = true;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        message = ex.Message;
-        //    }
+        public async Task<bool> AuthenticateAsync()
+        {
+            bool success = false;
+            try
+            {
+                if (User == null)
+                {
+                    
+                    // The authentication provider could also be Facebook, Twitter, or Microsoft
+                    User = await App.MobileService.LoginAsync(this, MobileServiceAuthenticationProvider.Facebook, Constants.URLScheme);
+                    if (User != null)
+                    {
 
-        //    // Display the success or failure message.
-        //    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        //    builder.SetMessage(message);
-        //    builder.SetTitle("Sign-in result");
-        //    builder.Create().Show();
+                        DependencyService.Get<IMessage>().LongAlert("You are now logged in via Facebook");
+                    }
+                }
+                success = true;
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert($"{ex}, Authentication failed");
+            }
+            return success;
+        }
 
-        //    return success;
-        //}
+        public async Task<bool> LogoutAsync()
+        {
+            bool success = false;
+            try
+            {
+                if (User != null)
+                {
+                    CookieManager.Instance.RemoveAllCookie();
+                    await App.MobileService.LogoutAsync();
+                    
+                }
+                User = null;
+                success = true;
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IMessage>().LongAlert($"{ex}, Logout failed");
+            }
+
+            return success;
+        }
     }
 }

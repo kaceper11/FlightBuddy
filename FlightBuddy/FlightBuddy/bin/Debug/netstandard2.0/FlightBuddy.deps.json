@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "e8db5a56cd14bfa3cba004370f457004115e3b35"
+    "signature": "597f18bc3443c858372fc69185a65bcf2f9bf2c2"
   },
   "compilationOptions": {},
   "targets": {
@@ -16,9 +16,10 @@
           "Xam.Plugin.Connectivity": "3.2.0",
           "Xam.Plugin.Media": "4.0.1.5",
           "Xam.Plugins.Messaging": "5.2.0",
-          "Xamarin.FFImageLoading": "2.4.9.961",
-          "Xamarin.FFImageLoading.Forms": "2.4.9.961",
-          "Xamarin.Forms": "3.4.0.1008975",
+          "Xamarin.Auth": "1.6.0.4",
+          "Xamarin.FFImageLoading": "2.4.11.982",
+          "Xamarin.FFImageLoading.Forms": "2.4.11.982",
+          "Xamarin.Forms": "4.0.0.425677",
           "sqlite-net-pcl": "1.5.231",
           "Mono.Android": "0.0.0.0"
         },
@@ -546,31 +547,39 @@
           }
         }
       },
-      "Xamarin.FFImageLoading/2.4.9.961": {
+      "Xamarin.Auth/1.6.0.4": {
         "runtime": {
-          "lib/netstandard1.0/FFImageLoading.Platform.dll": {
-            "assemblyVersion": "2.4.9.961",
-            "fileVersion": "2.4.9.961"
-          },
-          "lib/netstandard1.0/FFImageLoading.dll": {
-            "assemblyVersion": "2.4.9.961",
-            "fileVersion": "2.4.9.961"
+          "lib/netstandard1.6/Xamarin.Auth.dll": {
+            "assemblyVersion": "1.6.0.1",
+            "fileVersion": "1.6.0.1"
           }
         }
       },
-      "Xamarin.FFImageLoading.Forms/2.4.9.961": {
+      "Xamarin.FFImageLoading/2.4.11.982": {
+        "runtime": {
+          "lib/netstandard1.0/FFImageLoading.Platform.dll": {
+            "assemblyVersion": "2.4.11.982",
+            "fileVersion": "2.4.11.982"
+          },
+          "lib/netstandard1.0/FFImageLoading.dll": {
+            "assemblyVersion": "2.4.11.982",
+            "fileVersion": "2.4.11.982"
+          }
+        }
+      },
+      "Xamarin.FFImageLoading.Forms/2.4.11.982": {
         "dependencies": {
-          "Xamarin.FFImageLoading": "2.4.9.961",
-          "Xamarin.Forms": "3.4.0.1008975"
+          "Xamarin.FFImageLoading": "2.4.11.982",
+          "Xamarin.Forms": "4.0.0.425677"
         },
         "runtime": {
           "lib/netstandard1.0/FFImageLoading.Forms.dll": {
-            "assemblyVersion": "2.4.9.961",
-            "fileVersion": "2.4.9.961"
+            "assemblyVersion": "2.4.11.982",
+            "fileVersion": "2.4.11.982"
           }
         }
       },
-      "Xamarin.Forms/3.4.0.1008975": {
+      "Xamarin.Forms/4.0.0.425677": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -1001,31 +1010,22 @@
       "path": "xam.plugins.messaging/5.2.0",
       "hashPath": "xam.plugins.messaging.5.2.0.nupkg.sha512"
     },
-    "Xamarin.FFImageLoading/2.4.9.961": {
+    "Xamarin.Auth/1.6.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WXJh3BA8wGWUdAqOCNU6pcekTKYykmexmkpguGVMGE7kcSCoNlZ4ar6kDC2XjDW9HER50e/SueQsouVgGRsdrw==",
-      "path": "xamarin.ffimageloading/2.4.9.961",
-      "hashPath": "xamarin.ffimageloading.2.4.9.961.nupkg.sha512"
+      "sha512": "sha512-nruIDKXLkg5FJ5nbckWKVAlLB07Pq+7g3Iw9EUlnxz4QD2+XY5ravmVz4LUdwcF708GNSAqhgDabdSjHWK7BvA==",
+      "path": "xamarin.auth/1.6.0.4",
+      "hashPath": "xamarin.auth.1.6.0.4.nupkg.sha512"
     },
-    "Xamarin.FFImageLoading.Forms/2.4.9.961": {
+    "Xamarin.FFImageLoading/2.4.11.982": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-o844pI054yhlMWHVt9dh9bPBoyYhlhsHqVWXv/hL4OL1ooFCWUIJsR7LpiSmdG1xEtyHcJ4OQG4/kaQ2+KC5bA==",
-      "path": "xamarin.ffimageloading.forms/2.4.9.961",
-      "hashPath": "xamarin.ffimageloading.forms.2.4.9.961.nupkg.sha512"
+      "sha512": "sha512-M0sNIQgUPs+le6C2TS4RmZQAURnzaRVizRtnZIZ6/1//qGcEAtEXAGt/tBJz6I1zlP6XlMxq8io6b4sjFP5N9Q==",
+      "path": "xamarin.ffimageloading/2.4.11.982",
+      "hashPath": "xamarin.ffimageloading.2.4.11.982.nupkg.sha512"
     },
-    "Xamarin.Forms/3.4.0.1008975": {
+    "Xamarin.FFImageLoading.Forms/2.4.11.982": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tM9syeev45u92OFENGjq+Zw8WiEwLJFiXe317XpL9SY2RRk9sm2fc1lDVjzwz0da+5ZP5fi24NAPsPQdxBdMwQ==",
-      "path": "xamarin.forms/3.4.0.1008975",
-      "hashPath": "xamarin.forms.3.4.0.1008975.nupkg.sha512"
-    },
-    "Mono.Android/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    }
-  }
-}
+      "sha512": "sha512-7X4t3J1wJj0/0o8+vd91hzSYlrqEeMFC7Mj+0T8O+fcbRSHo/c+QbWscEQiT4AaKCwyO709xq+7aY2XXbK/H7g==",
+      "p
