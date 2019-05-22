@@ -43,7 +43,9 @@ namespace FlightBuddy
                 this.UserFriend = userFriend;
                 commonFlightsListView.ItemsSource = await this.db.GetCommonFlights(App.User.Id, userFriend.Id);
 
-                if (App.User.MobileNumber == null)
+                bool isUserMobileNullOrEmpty = string.IsNullOrWhiteSpace(userFriend.MobileNumber);
+
+                if (isUserMobileNullOrEmpty)
                 {
                     sendSmsButton.IsVisible = false;
                     makeCallButton.IsVisible = false;

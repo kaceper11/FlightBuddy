@@ -32,7 +32,7 @@ namespace FlightBuddy
 	        {
 	            var userFriend = await this.db.GetUserById(this.UserFriendId);
 	            flightParticipantName.Text = userFriend.Name;
-	            flightParticipantBio.Text = userFriend.Bio;
+	            flightParticipantBio.Text = userFriend.Bio ?? " - ";
 	            profileImage.Source = userFriend.ProfilePictureUrl;
 	        }
 	        else

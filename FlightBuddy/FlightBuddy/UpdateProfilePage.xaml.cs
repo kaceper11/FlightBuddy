@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using FlightBuddy.ToastNotification;
 using Xamarin.Forms;
@@ -31,14 +32,21 @@ namespace FlightBuddy
 
                 if (isEmailFilledIn && isNameFilledIn)
 	            {
-	                App.User.Email = emailEntry.Text;
-	                App.User.Name = nameEntry.Text;
-	                App.User.MobileNumber = mobileNumberEntry.Text;
-	                App.User.Bio = bioEntry.Text;
+	                if (IsPhoneNumber(mobileNumberEntry.Text) && IsValidEmail(emailEntry.Text))
+	                {
+	                    App.User.Email = emailEntry.Text;
+	                    App.User.Name = nameEntry.Text;
+	                    App.User.MobileNumber = mobileNumberEntry.Text;
+	                    App.User.Bio = bioEntry.Text;
 
-                    this.db.UpdateUser(App.User);
-	                await Navigation.PopAsync();
-                    DependencyService.Get<IMessage>().LongAlert("Profile has been updated");
+	                    this.db.UpdateUser(App.User);
+	                    await Navigation.PopAsync();
+	                    DependencyService.Get<IMessage>().LongAlert("Profile has been updated");
+	                }
+	                else
+	                {
+	                    DependencyService.Get<IMessage>().LongAlert("Mobile number or email address are not valid");
+                    }
 	            }
                 else
                 {
@@ -77,5 +85,23 @@ namespace FlightBuddy
             }
 
 	    }
-	}
+
+	    private static bool IsPhoneNumber(string number)
+	    {
+	        return Regex.Match(number, @"^\+[1-9]{1}[0-9]{3,14}$").Success;
+	    }
+
+	    private bool IsValidEmail(string email)
+	    {
+	        try
+	        {
+	            var addr = new System.Net.Mail.MailAddress(email);
+	            return addr.Address == email;
+	        }
+	        catch
+	        {
+	            return false;
+	        }
+	    }
+    }
 }

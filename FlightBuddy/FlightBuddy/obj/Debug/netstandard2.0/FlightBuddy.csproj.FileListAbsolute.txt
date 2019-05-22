@@ -29,3 +29,5 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netsta
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FlightBuddy.csprojAssemblyReference.cache
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\FacebookProfilePage.xaml.g.cs
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\bin\Debug\netstandard2.0\Xamarin.Android.Support.v7.AppCompat.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy\FlightBuddy\obj\Debug\netstandard2.0\ChangePasswordPage.xaml.g.cs

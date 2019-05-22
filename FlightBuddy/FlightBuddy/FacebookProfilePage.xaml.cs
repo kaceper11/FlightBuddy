@@ -55,9 +55,9 @@ namespace FlightBuddy
                     var userDb = new User()
                     {
                         Email = userFb.Email,
-                        Password = userFb.FirstName,
+                        Password = userFb.Email,
+                        MobileNumber = null,
                         Name = userFb.Name,
-                        MobileNumber = userFb.FirstName,
                         ProfilePictureUrl = userFb.Picture.Data.Url,
                         FacebookId = userFb.Id
                     };
@@ -67,13 +67,13 @@ namespace FlightBuddy
                     if (userToBeAdded != null)
                     {
                         App.User = userToBeAdded;
-                        await Navigation.PushAsync(new HomePage());
+                        await Navigation.PushAsync(new HomePage(true));
                     }
                     else
                     {
                         this.db.AddUser(userDb);
                         App.User = userDb;
-                        await Navigation.PushAsync(new HomePage());
+                        await Navigation.PushAsync(new HomePage(true));
                     }
                 }
             }

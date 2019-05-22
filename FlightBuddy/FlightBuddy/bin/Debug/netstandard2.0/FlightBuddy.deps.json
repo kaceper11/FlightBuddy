@@ -21,7 +21,8 @@
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.Forms": "4.0.0.425677",
           "sqlite-net-pcl": "1.5.231",
-          "Mono.Android": "0.0.0.0"
+          "Mono.Android": "0.0.0.0",
+          "Xamarin.Android.Support.v7.AppCompat": "1.0.0.0"
         },
         "runtime": {
           "FlightBuddy.dll": {}
@@ -602,6 +603,14 @@
             "fileVersion": "0.0.0.0"
           }
         }
+      },
+      "Xamarin.Android.Support.v7.AppCompat/1.0.0.0": {
+        "runtime": {
+          "Xamarin.Android.Support.v7.AppCompat.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1039,6 +1048,11 @@
       "hashPath": "xamarin.forms.4.0.0.425677.nupkg.sha512"
     },
     "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Xamarin.Android.Support.v7.AppCompat/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

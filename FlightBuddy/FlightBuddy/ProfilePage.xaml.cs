@@ -144,5 +144,10 @@ namespace FlightBuddy
 	    {
 	        await Navigation.PushAsync(new UpdateProfilePage());
 	    }
+
+	    private async void ChangePasswordButton_Clicked(object sender, EventArgs e)
+	    {
+	        await Navigation.PushAsync(new ChangePasswordPage());
+	    }
 	}
 }
