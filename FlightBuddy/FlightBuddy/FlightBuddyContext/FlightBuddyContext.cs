@@ -122,8 +122,9 @@ namespace FlightBuddy.FlightBuddyContext
                         Id = user.Id,
                         Name = user.Name, 
                         Bio = user.Bio ?? string.Empty,
-                        ProfilePictureUrl = user.ProfilePictureUrl ?? string.Empty
-                    };
+                        ProfilePictureUrl = user.ProfilePictureUrl ?? string.Empty,
+                        FacebookId = user.FacebookId ?? string.Empty
+                   };
 
         }
 
@@ -186,7 +187,8 @@ namespace FlightBuddy.FlightBuddyContext
                     MobileNumber = user.MobileNumber,
                     Name = user.Name,
                     Bio = user.Bio ?? string.Empty,
-                    ProfilePictureUrl = user.ProfilePictureUrl ?? string.Empty
+                    ProfilePictureUrl = user.ProfilePictureUrl ?? string.Empty,
+                    FacebookId = user.FacebookId ?? string.Empty                                       
                 };
         }
 

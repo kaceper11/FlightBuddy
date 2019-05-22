@@ -35,9 +35,9 @@ namespace FlightBuddy
 	        {
 	            var user = await this.db.GetUserById(App.User.Id);
 	            userEmail.Text = user.Email;
-	            userMobileNumber.Text = user.MobileNumber;
+	            userMobileNumber.Text = user.MobileNumber ?? " - ";
 	            userName.Text = user.Name;
-	            userBio.Text = user.Bio;
+	            userBio.Text = user.Bio ?? " - ";
 	            SetUserProfilePicture();
 	        }
 	        else

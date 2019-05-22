@@ -25,15 +25,25 @@ namespace FlightBuddy
 	    {
 	        if (App.CheckConnectvity())
 	        {
-	            App.User.Email = emailEntry.Text;
-	            App.User.Name = nameEntry.Text;
-	            App.User.Email = emailEntry.Text;
-	            App.User.MobileNumber = mobileNumberEntry.Text;
-	            App.User.Bio = bioEntry.Text;
+	            bool isEmailFilledIn = !string.IsNullOrWhiteSpace(emailEntry.Text);
+	            bool isNameFilledIn = !string.IsNullOrWhiteSpace(nameEntry.Text);
 
-                this.db.UpdateUser(App.User);
-	            await Navigation.PopAsync();
-                DependencyService.Get<IMessage>().LongAlert("Profile has been updated");
+
+                if (isEmailFilledIn && isNameFilledIn)
+	            {
+	                App.User.Email = emailEntry.Text;
+	                App.User.Name = nameEntry.Text;
+	                App.User.MobileNumber = mobileNumberEntry.Text;
+	                App.User.Bio = bioEntry.Text;
+
+                    this.db.UpdateUser(App.User);
+	                await Navigation.PopAsync();
+                    DependencyService.Get<IMessage>().LongAlert("Profile has been updated");
+	            }
+                else
+                {
+                    DependencyService.Get<IMessage>().LongAlert("Name and email can't be empty");
+                }
 	        }
 
 	    }
@@ -55,7 +65,7 @@ namespace FlightBuddy
 	            var currentUser = await this.db.GetUserById(App.User.Id);
 	            nameEntry.Text = currentUser.Name;
 	            emailEntry.Text = currentUser.Email;
-	            mobileNumberEntry.Text = currentUser.MobileNumber;
+	            mobileNumberEntry.Text = currentUser.MobileNumber ??  string.Empty;
 	            bioEntry.Text = currentUser.Bio ?? string.Empty;
 	        }
 	        else

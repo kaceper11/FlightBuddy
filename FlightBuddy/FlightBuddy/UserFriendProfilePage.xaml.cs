@@ -38,10 +38,16 @@ namespace FlightBuddy
                 var userFriend = await db.GetUserById(this.UserFriendId);
                 userFriendName.Text = userFriend.Name;
                 userFriendEmail.Text = userFriend.Email;
-                userFriendMobileNumber.Text = userFriend.MobileNumber;
-                userFriendBio.Text = userFriend.Bio;
+                userFriendMobileNumber.Text = userFriend.MobileNumber ?? " - ";
+                userFriendBio.Text = userFriend.Bio ?? " - ";
                 this.UserFriend = userFriend;
                 commonFlightsListView.ItemsSource = await this.db.GetCommonFlights(App.User.Id, userFriend.Id);
+
+                if (App.User.MobileNumber == null)
+                {
+                    sendSmsButton.IsVisible = false;
+                    makeCallButton.IsVisible = false;
+                }
             }
             else
             {
@@ -50,6 +56,10 @@ namespace FlightBuddy
                 userFriendMobileNumber.Text = string.Empty;
                 userFriendBio.Text = string.Empty;
                 commonFlightsListView.ItemsSource = null;
+
+                sendSmsButton.IsVisible = false;
+                makeCallButton.IsVisible = false;
+                sendEmailButton.IsVisible = false;
             }
 
             this.IsBusy = false;

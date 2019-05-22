@@ -19,5 +19,7 @@ namespace FlightBuddy.Model
         public string ProfilePictureUrl { get; set; }
 
         public string Bio { get; set; }
+
+        public string FacebookId { get; set; }
     }
 }

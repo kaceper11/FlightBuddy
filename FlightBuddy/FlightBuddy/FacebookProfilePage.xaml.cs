@@ -58,7 +58,8 @@ namespace FlightBuddy
                         Password = userFb.FirstName,
                         Name = userFb.Name,
                         MobileNumber = userFb.FirstName,
-                        ProfilePictureUrl = userFb.Picture.Data.Url
+                        ProfilePictureUrl = userFb.Picture.Data.Url,
+                        FacebookId = userFb.Id
                     };
 
                     var userToBeAdded = await this.db.GetUserByEmail(userFb.Email);
