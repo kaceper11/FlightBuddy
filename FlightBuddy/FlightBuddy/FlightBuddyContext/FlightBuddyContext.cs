@@ -171,7 +171,9 @@ namespace FlightBuddy.FlightBuddyContext
 
         public async Task<bool> CheckIfFlightExists(Flight flight)
         {
-            return !(await this.Flights.ToListAsync()).Any(f => f.FlightNumber == flight.FlightNumber);
+            return !(await this.Flights.ToListAsync()).Any(f => f.FlightNumber == flight.FlightNumber
+                                                                && f.ArriveTimeAirport == flight.ArriveTimeAirport
+                                                                && f.LeaveTimeAirport == flight.LeaveTimeAirport);
         }
 
         public async Task<IEnumerable<UserFriendViewModel>> GetFlightParticipants(string flightId)
