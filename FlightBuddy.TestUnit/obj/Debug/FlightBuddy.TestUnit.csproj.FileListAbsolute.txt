@@ -1,3 +1,9 @@
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft.Data.OData.xml
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\de\Microsoft.Data.Edm.resources.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\es\Microsoft.Data.OData.resources.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\ko\System.Spatial.resources.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\ru\System.Spatial.resources.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\obj\Debug\FlightBuddy.TestUnit.csproj.App.config
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -125,6 +131,8 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Moq.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Newtonsoft.Json.Bson.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Newtonsoft.Json.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Connectivity.Abstractions.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Connectivity.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Media.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Messaging.Abstractions.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Messaging.dll
@@ -137,7 +145,9 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\SQLitePCL
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\SQLitePCLRaw.core.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Net.Http.Extensions.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Net.Http.Primitives.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Reactive.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Security.Cryptography.ProtectedData.dll
@@ -146,6 +156,7 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Th
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.ValueTuple.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Web.Http.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Web.Http.OData.dll
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Xamarin.Auth.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Xamarin.Forms.Core.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Xamarin.Forms.Platform.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Xamarin.Forms.Xaml.dll
@@ -153,6 +164,7 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Mono.Andr
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\FlightBuddy.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Akavache.Core.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Akavache.Sqlite3.xml
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\AutoMapper.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\AutoMapper.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Castle.Core.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\EntityFramework.xml
@@ -168,7 +180,6 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft.Azure.Mobile.Server.Entity.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft.Azure.Mobile.Server.Tables.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft.Data.Edm.xml
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft.Data.OData.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
@@ -178,6 +189,10 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Moq.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Newtonsoft.Json.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Newtonsoft.Json.Bson.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Newtonsoft.Json.Bson.xml
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Connectivity.pdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Connectivity.xml
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Connectivity.Abstractions.pdb
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Connectivity.Abstractions.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Media.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Messaging.pdb
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Messaging.xml
@@ -187,7 +202,9 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Plugin.Pe
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\Splat.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\SQLite-net.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Reactive.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\System.Spatial.xml
@@ -228,7 +245,6 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\ko\Micros
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\ru\Microsoft.Azure.Mobile.Server.Tables.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\zh-Hans\Microsoft.Azure.Mobile.Server.Tables.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\zh-Hant\Microsoft.Azure.Mobile.Server.Tables.resources.dll
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\de\Microsoft.Data.Edm.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\es\Microsoft.Data.Edm.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\fr\Microsoft.Data.Edm.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\it\Microsoft.Data.Edm.resources.dll
@@ -238,7 +254,6 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\ru\Micros
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\zh-Hans\Microsoft.Data.Edm.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\zh-Hant\Microsoft.Data.Edm.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\de\Microsoft.Data.OData.resources.dll
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\es\Microsoft.Data.OData.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\fr\Microsoft.Data.OData.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\it\Microsoft.Data.OData.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\ja\Microsoft.Data.OData.resources.dll
@@ -251,8 +266,6 @@ C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\es\System
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\fr\System.Spatial.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\it\System.Spatial.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\ja\System.Spatial.resources.dll
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\ko\System.Spatial.resources.dll
-C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\ru\System.Spatial.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\zh-Hans\System.Spatial.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\bin\Debug\zh-Hant\System.Spatial.resources.dll
 C:\Users\kfkep\source\repos\FlightBuddy\FlightBuddy.TestUnit\obj\Debug\FlightBuddy.TestUnit.csprojAssemblyReference.cache

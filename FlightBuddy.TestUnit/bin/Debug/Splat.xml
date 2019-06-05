@@ -780,6 +780,32 @@
         <member name="M:Splat.AllocationFreeLoggerBase.Write(System.Exception,System.String,System.Type,Splat.LogLevel)">
             <inheritdoc />
         </member>
+        <member name="T:Splat.ConsoleLogger">
+            <summary>
+            A logger which will send messages to the console.
+            </summary>
+        </member>
+        <member name="P:Splat.ConsoleLogger.ExceptionMessageFormat">
+            <summary>
+            Gets or sets the exception message format.
+            First parameter will be the message, second will be the exception.
+            </summary>
+        </member>
+        <member name="P:Splat.ConsoleLogger.Level">
+            <inheritdoc />
+        </member>
+        <member name="M:Splat.ConsoleLogger.Write(System.String,Splat.LogLevel)">
+            <inheritdoc />
+        </member>
+        <member name="M:Splat.ConsoleLogger.Write(System.Exception,System.String,Splat.LogLevel)">
+            <inheritdoc />
+        </member>
+        <member name="M:Splat.ConsoleLogger.Write(System.String,System.Type,Splat.LogLevel)">
+            <inheritdoc />
+        </member>
+        <member name="M:Splat.ConsoleLogger.Write(System.Exception,System.String,System.Type,Splat.LogLevel)">
+            <inheritdoc />
+        </member>
         <member name="T:Splat.DebugLogger">
             <summary>
             A logger which will send messages to the debug logger.
@@ -3623,6 +3649,33 @@
             <inheritdoc />
         </member>
         <member name="M:Splat.WrappingFullLogger.Fatal``3(System.IFormatProvider,System.String,``0,``1,``2)">
+            <inheritdoc />
+        </member>
+        <member name="T:Splat.WrappingLogLevelLogger">
+            <summary>
+            A prefix logger which wraps a <see cref="T:Splat.ILogger"/>.
+            </summary>
+        </member>
+        <member name="M:Splat.WrappingLogLevelLogger.#ctor(Splat.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Splat.WrappingLogLevelLogger"/> class.
+            Placeholder.
+            </summary>
+            <param name="inner">The <see cref="T:Splat.ILogger"/> to wrap in this class.</param>
+        </member>
+        <member name="P:Splat.WrappingLogLevelLogger.Level">
+            <inheritdoc />
+        </member>
+        <member name="M:Splat.WrappingLogLevelLogger.Write(System.String,Splat.LogLevel)">
+            <inheritdoc />
+        </member>
+        <member name="M:Splat.WrappingLogLevelLogger.Write(System.Exception,System.String,Splat.LogLevel)">
+            <inheritdoc />
+        </member>
+        <member name="M:Splat.WrappingLogLevelLogger.Write(System.String,System.Type,Splat.LogLevel)">
+            <inheritdoc />
+        </member>
+        <member name="M:Splat.WrappingLogLevelLogger.Write(System.Exception,System.String,System.Type,Splat.LogLevel)">
             <inheritdoc />
         </member>
         <member name="T:Splat.WrappingPrefixLogger">

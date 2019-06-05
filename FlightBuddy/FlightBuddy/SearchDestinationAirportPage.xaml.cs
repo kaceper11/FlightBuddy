@@ -33,6 +33,7 @@ namespace FlightBuddy
 	    protected override void OnAppearing()
 	    {
 	        this.IsBusy = true;
+
 	        if (App.CheckConnectvity())
 	        {
 	            this.GetListOfAirports();

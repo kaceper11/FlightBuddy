@@ -32,7 +32,7 @@ namespace FlightBuddy
             this.IsBusy = true;
             if (App.CheckConnectvity())
             {
-                this.FlightId = await this.db.GetFlightIdByFlightNumber(this.Flight);
+                this.FlightId = await this.db.GetFlightIdByFlightDetails(this.Flight);
                 flightNumber.Text = this.Flight.FlightNumber;
                 flightOrigin.Text = this.Flight.Origin;
                 flightDestination.Text = this.Flight.Destination;

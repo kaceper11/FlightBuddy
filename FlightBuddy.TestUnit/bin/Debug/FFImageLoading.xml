@@ -1311,14 +1311,14 @@
         </member>
         <member name="M:FFImageLoading.Work.TaskParameter.FromEmbeddedResource(System.String)">
             <summary>
-            Constructs a new TaskParameter to load an image from a file.
+            Load an image from a file from application resource.
             </summary>
             <returns>The new TaskParameter.</returns>
             <param name="resourceUri">Uri to the resource.</param>
         </member>
         <member name="M:FFImageLoading.Work.TaskParameter.FromUrl(System.String,System.Nullable{System.TimeSpan})">
             <summary>
-            Constructs a new TaskParameter to load an image from a URL.
+            Load an image from a file from from a URL.
             </summary>
             <returns>The new TaskParameter.</returns>
             <param name="url">URL to the file</param>
@@ -1326,14 +1326,15 @@
         </member>
         <member name="M:FFImageLoading.Work.TaskParameter.FromApplicationBundle(System.String)">
             <summary>
-            Constructsa new TaskParameter to load an image from a file from application bundle.
+            Load an image from a file from application bundle.
+            eg. assets on Android, compiled resource for other platforms
             </summary>
-            <param name="filepath">Path to the file.</param>
+            <param name="filePath">Path to the file.</param>
             <returns>The new TaskParameter.</returns>
         </member>
         <member name="M:FFImageLoading.Work.TaskParameter.FromCompiledResource(System.String)">
             <summary>
-            Constructs a new TaskParameter to load an image from a compiled drawable resource.
+            Load an image from a compiled application resource
             </summary>
             <returns>The new TaskParameter.</returns>
             <param name="resourceName">Name of the resource in drawable folder without extension</param>
@@ -1630,14 +1631,15 @@
         </member>
         <member name="M:FFImageLoading.IImageService.LoadFileFromApplicationBundle(System.String)">
             <summary>
-            Constructs a new TaskParameter to load an image from a file from application bundle.
+            Load an image from a file from application bundle.
+            eg. assets on Android, compiled resource for other platforms
             </summary>
             <returns>The new TaskParameter.</returns>
             <param name="filepath">Path to the file.</param>
         </member>
         <member name="M:FFImageLoading.IImageService.LoadCompiledResource(System.String)">
             <summary>
-            Constructs a new TaskParameter to load an image from a compiled drawable resource.
+            Load an image from a file from application resource.
             </summary>
             <returns>The new TaskParameter.</returns>
             <param name="resourceName">Name of the resource in drawable folder without extension</param>
@@ -1648,8 +1650,14 @@
             eg. resource://YourProject.Resource.Resource.png
             eg. resource://YourProject.Resource.Resource.png?assembly=[FULL_ASSEMBLY_NAME]
             </summary>
+        </member>
+        <member name="M:FFImageLoading.IImageService.LoadEmbeddedResource(System.String,System.Reflection.Assembly)">
+            <summary>
+            Constructs a new TaskParameter to load an image from a compiled drawable resource.
+            eg. resource://YourProject.Resource.Resource.png
+            eg. resource://YourProject.Resource.Resource.png?assembly=[FULL_ASSEMBLY_NAME]
+            </summary>
             <returns>The new TaskParameter.</returns>
-            <param name="resourceUri">Uri of the resource</param>
         </member>
         <member name="M:FFImageLoading.IImageService.LoadStream(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{System.IO.Stream}})">
             <summary>

@@ -164,9 +164,11 @@ namespace FlightBuddy.FlightBuddyContext
             return (await this.Flights.ToListAsync()).FirstOrDefault(flight => flight.Id == flightId);
         }
 
-        public async Task<string> GetFlightIdByFlightNumber(Flight flight)
+        public async Task<string> GetFlightIdByFlightDetails(Flight flight)
         {
-            return  (await this.Flights.ToListAsync()).SingleOrDefault(f => f.FlightNumber == flight.FlightNumber).Id;
+            return  (await this.Flights.ToListAsync()).FirstOrDefault(f => f.FlightNumber == flight.FlightNumber
+                                                                            && f.LeaveTimeAirport == flight.LeaveTimeAirport
+                                                                            && f.ArriveTimeAirport == flight.ArriveTimeAirport).Id;
         }
 
         public async Task<bool> CheckIfFlightExists(Flight flight)
